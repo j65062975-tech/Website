@@ -1,0 +1,45 @@
+/* Algemeen */
+body {font-family: Arial, Helvetica, sans-serif; margin:0; background:#0f172a; color:#fff;}
+header {background:#020617; padding:20px; text-align:center;}
+.container {padding:20px;}
+footer {background:#020617; padding:15px; text-align:center; font-size:0.9rem;}
+
+/* Grid */
+.grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
+
+/* Kaarten */
+.card {background:#1e293b; padding:15px; border-radius:12px; text-align:center;}
+.card img {max-width:100%; height:auto; border-radius:8px;}
+
+/* Knoppen */
+button {background:#00bfff; color:#000; border:none; padding:8px 12px; cursor:pointer; border-radius:4px;}
+button:hover {opacity:0.9;}
+
+/* Winkelwagen (vast rechts, mobiel aangepast) */
+.cart {
+  position:fixed; right:0; top:100px; background:#1e293b; padding:15px; width:260px; max-height:80vh; overflow-y:auto;
+}
+@media (max-width:768px){
+  .cart {position:static; width:auto; margin-top:20px;}
+}
+
+/* WhatsApp / Telegram knoppen */
+.whatsapp, .telegram {
+  position:fixed; bottom:20px; padding:10px 15px; color:#fff; text-decoration:none; border-radius:8px;
+}
+.whatsapp {right:20px; background:#25D366;}
+.telegram {right:120px; background:#0088cc;}
+
+/* Leeftijds‑gate */
+.age-gate {
+  position:fixed; inset:0; background:rgba(0,0,0,0.85); display:flex; justify-content:center; align-items:center;
+}
+.age-box {background:#1e293b; padding:40px; text-align:center; border-radius:12px;}
+.age-box button {margin-top:15px;}
+
+/* Dropdown */
+select {margin-bottom:15px; padding:5px; border-radius:4px;}
+
+/* Lijst */
+ul {list-style:none; padding:0;}
+li {margin-bottom:5px;}

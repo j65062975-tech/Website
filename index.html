@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GenPower Peptides & Zycare Supplements</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 18+ leeftijds‑gate -->
+<div id="ageGate" class="age-gate">
+  <div class="age-box">
+    <h2>Leeftijdsverificatie</h2>
+    <p>Je moet 18 jaar of ouder zijn om deze site te betreden.</p>
+    <button onclick="verifyAge()">Ik ben 18+</button>
+  </div>
+</div>
+
+<header>
+  <h1>GenPower Peptides & Zycare Supplements</h1>
+</header>
+
+<div class="container">
+  <h2>Onze Producten</h2>
+  <p>Alleen beschikbaar voor personen van 18 jaar of ouder.</p>
+
+  <!-- Categorie‑filter (optioneel) -->
+  <select id="categoryFilter" onchange="filterProducts()">
+    <option value="all">Alle categorieën</option>
+    <option value="Peptide">Peptide</option>
+    <option value="Supplement">Supplement</option>
+    <option value="Bundel">Bundel</option>
+  </select>
+
+  <div id="productGrid" class="grid"></div>
+</div>
+
+<div class="cart">
+  <h3>Winkelwagen</h3>
+  <ul id="cartItems"></ul>
+  <p><strong>Totaal: €<span id="total">0</span></strong></p>
+  <button onclick="checkoutWhatsApp()">Afrekenen via WhatsApp</button>
+</div>
+
+<a href="https://wa.me/1234567890" class="whatsapp">WhatsApp Support</a>
+<a href="https://t.me/GenPowerSupport" class="telegram">Telegram Support</a>
+
+<footer>
+  <p>© 2026 GenPower. Alle rechten voorbehouden.</p>
+  <p>Onze producten zijn uitsluitend bestemd voor volwassenen (18+). Raadpleeg een arts voordat u supplementen gebruikt.</p>
+</footer>
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
