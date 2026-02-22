@@ -77,7 +77,7 @@ function checkoutWhatsApp() {
     });
 
     const total = document.getElementById("total").textContent;
-    message += `%0ATotaal: €${total}%0A%0ABedankt voor uw aankoop!`;
+    message += `%0ATotaal: €${total}%0A%0AWe zullen snel reageren op uw bestelling!`;
 
     window.location.href = `https://wa.me/1234567890?text=${message}`;
 }
