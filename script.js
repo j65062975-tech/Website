@@ -55,15 +55,33 @@ function updateCart() {
     const list = document.getElementById("cartItems");
     list.innerHTML = "";
     let total = 0;
+    let unknownPrice = false;
 
     cart.forEach(p => {
-        total += p.price;
         const li = document.createElement("li");
-        li.textContent = `${p.name} – €${p.price}`;
+
+        let price = p.price;
+
+        // If price is a question mark
+        if (price === "?" || price === undefined || price === null) {
+            unknownPrice = true;
+            li.textContent = `${p.name} - €?`;
+        } else {
+            // Convert "34,34" → 34.34
+            const numericPrice = parseFloat(
+                price.toString().replace(",", ".")
+            );
+
+            total += numericPrice;
+            li.textContent = `${p.name} - €${numericPrice.toFixed(2)}`;
+        }
+
         list.appendChild(li);
     });
 
-    document.getElementById("total").textContent = total.toFixed(2);
+    // If any item had unknown price → total is "?"
+    document.getElementById("total").textContent =
+        unknownPrice ? "?" : total.toFixed(2);
 }
 
 // whatsapp checkout
