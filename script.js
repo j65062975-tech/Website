@@ -81,3 +81,23 @@ function checkoutWhatsApp() {
 
     window.location.href = `https://wa.me/1234567890?text=${message}`;
 }
+
+// email checkout
+function checkoutEmail() {
+    const orderId = Date.now();
+
+    let subject = `Bestelling #${orderId}`;
+    let body = `Bestelling #${orderId}\n\n`;
+
+    cart.forEach(p => {
+        body += `${p.name} - €${p.price}\n`;
+    });
+
+    const total = document.getElementById("total").textContent;
+    body += `\nTotaal: €${total}\n\nWe zullen snel reageren op uw bestelling!`;
+
+    // encode voor speciale tekens
+    const mailtoLink = `mailto:powergenanabolics@proton.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+}
