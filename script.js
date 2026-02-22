@@ -1,29 +1,23 @@
 let cart = [];
 
-// -------------------------------------------------
-// Init – leeftijdscontrole + product rendering
-// -------------------------------------------------
+// init
 window.onload = function () {
     if (localStorage.getItem("ageVerified") === "true") {
         document.getElementById("ageGate").style.display = "none";
     }
-    renderProducts();          // eerste weergave (alle)
+    renderProducts();
 };
 
-// -------------------------------------------------
-// Leeftijds‑gate
-// -------------------------------------------------
+// age gate
 function verifyAge() {
     localStorage.setItem("ageVerified", "true");
     document.getElementById("ageGate").style.display = "none";
 }
 
-// -------------------------------------------------
-// Product rendering (met afbeelding)
-// -------------------------------------------------
+// product rendering (met afbeelding)
 function renderProducts(filter = "all") {
     const grid = document.getElementById("productGrid");
-    grid.innerHTML = "";                     // leegmaken
+    grid.innerHTML = "";
 
     const list = filter === "all"
         ? products
@@ -44,17 +38,13 @@ function renderProducts(filter = "all") {
     });
 }
 
-// -------------------------------------------------
-// Filter dropdown
-// -------------------------------------------------
+// filter dropdown
 function filterProducts() {
     const sel = document.getElementById("categoryFilter").value;
     renderProducts(sel);
 }
 
-// -------------------------------------------------
-// Winkelwagen functies
-// -------------------------------------------------
+// winkelwagen toevoegen
 function addToCart(id) {
     const product = products.find(p => p.id === id);
     cart.push(product);
@@ -76,11 +66,10 @@ function updateCart() {
     document.getElementById("total").textContent = total.toFixed(2);
 }
 
-// -------------------------------------------------
-// WhatsApp‑checkout (incl. order‑ID)
-// -------------------------------------------------
+// whatsapp checkout
 function checkoutWhatsApp() {
-    const orderId = Date.now(); // eenvoudige unieke ID
+    const orderId = Date.now();
+
     let message = `Bestelling #${orderId}%0A%0A`;
 
     cart.forEach(p => {
@@ -90,7 +79,5 @@ function checkoutWhatsApp() {
     const total = document.getElementById("total").textContent;
     message += `%0ATotaal: €${total}%0A%0ABedankt voor uw aankoop!`;
 
-    // Vervang 1234567890 door je eigen nummer
     window.location.href = `https://wa.me/1234567890?text=${message}`;
 }
-
