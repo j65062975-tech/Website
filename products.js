@@ -2,23 +2,23 @@
 let products = [
 
     // injectie sectie
-    { id: 1, name: "DROSTA-ZYLONE 100 mg", price: "?", category: "inject", image: "todo" },
-    { id: 2, name: "NANDRO-ZYNOATE 250 mg", price: "?", category: "inject", image: "todo" },
-    { id: 3, name: "Primozycare 100 mg/ml", price: "?", category: "inject", image: "todo" },
-    { id: 4, name: "TESTO ZYPRO 100 mg", price: "?", category: "inject", image: "todo" },
-    { id: 5, name: "TESTO-ZYCYP 250 mg", price: "?", category: "inject", image: "todo" },
-    { id: 6, name: "Testo-Zyenate 250 mg", price: "?", category: "inject", image: "todo" },
-    { id: 7, name: "TESTO-ZYMIX 250 mg", price: "?", category: "inject", image: "todo" },
-    { id: 8, name: "TREN-ZYACE 100 mg", price: "?", category: "inject", image: "todo" },
+    { id: 1, name: "DROSTA-ZYLONE 100 mg", price: "39,95", category: "inject", image: "todo" },
+    { id: 2, name: "NANDRO-ZYNOATE 250 mg", price: "39,95", category: "inject", image: "todo" },
+    { id: 3, name: "Primozycare 100 mg/ml", price: "44,95", category: "inject", image: "todo" },
+    { id: 4, name: "TESTO ZYPRO 100 mg", price: "39,95", category: "inject", image: "todo" },
+    { id: 5, name: "TESTO-ZYCYP 250 mg", price: "39,95", category: "inject", image: "todo" },
+    { id: 6, name: "Testo-Zyenate 250 mg", price: "39,95", category: "inject", image: "todo" },
+    { id: 7, name: "TESTO-ZYMIX 250 mg", price: "43,95", category: "inject", image: "todo" },
+    { id: 8, name: "TREN-ZYACE 100 mg", price: "39,95", category: "inject", image: "todo" },
 
     // tabletten sectie
-    { id: 9, name: "CLENBURN 40MCG", price: "?", category: "tabletten", image: "todo" },
-    { id: 10, name: "DIANOCARE 10 mg", price: "?", category: "tabletten", image: "todo" },
+    { id: 9, name: "CLENBURN 40MCG", price: "30,00", category: "tabletten", image: "todo" },
+    { id: 10, name: "DIANOCARE 10 mg", price: "29,95", category: "tabletten", image: "todo" },
     { id: 11, name: "LIOCARE 25MCG", price: "?", category: "tabletten", image: "todo" },
     { id: 12, name: "NANDRO-ZYPRO 100 mg", price: "?", category: "tabletten", image: "todo" },
-    { id: 13, name: "OXANACARE 10 mg", price: "?", category: "tabletten", image: "todo" },
-    { id: 14, name: "OXYCARE 50 mg", price: "?", category: "tabletten", image: "todo" },
-    { id: 15, name: "PROVICARE 25 mg", price: "?", category: "tabletten", image: "todo" },
+    { id: 13, name: "OXANACARE 10 mg", price: "39,95", category: "tabletten", image: "todo" },
+    { id: 14, name: "OXYCARE 50 mg", price: "59,95", category: "tabletten", image: "todo" },
+    { id: 15, name: "PROVICARE 25 mg", price: "39,95", category: "tabletten", image: "todo" },
 
     // peptides sectie (geen dosering toevoegen vanwege ?)
     { id: 16, name: "Tirzepatide", price: "?", category: "peptides", image: "todo" },
