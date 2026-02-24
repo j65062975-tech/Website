@@ -120,6 +120,57 @@ button:hover {
   margin-top: 15px;
 }
 
+/* Navigatie */
+.nav {
+  margin-top: 10px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 12px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: #00bfff;
+  color: #000;
+}
+
+/* Pagina‑inhoud */
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-section {
+  background: #1e293b;
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.info-section h3 {
+  margin-top: 0;
+  color: #00bfff;
+}
+
+.info-section a {
+  color: #00bfff;
+}
+
+.info-list {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.info-list li {
+  margin-bottom: 8px;
+}
+
 /* Dropdown */
 select {
   margin-bottom: 15px;
