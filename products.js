@@ -20,7 +20,7 @@ let products = [
     { id: 14, name: "OXYCARE 50mg", price: "59,95", category: "tabletten", image: "todo" },
     { id: 15, name: "PROVICARE 25mg", price: "39,95", category: "tabletten", image: "todo" },
 
-    // peptides sectie (geen dosering toevoegen vanwege ?)
+    // peptides leverbaar in verwachting in 10-03-2026 sectie (geen dosering toevoegen vanwege ?)
     { id: 16, name: "Tirzepatide ?mg", price: "?", category: "peptides", image: "todo" },
     { id: 17, name: "Semaglutide ?mg", price: "?", category: "peptides", image: "todo" },
     { id: 18, name: "Retatrutide ?mg", price: "?", category: "peptides", image: "todo" },
