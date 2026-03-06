@@ -45,7 +45,11 @@
   <div class="cart">
     <h3>Winkelwagen</h3>
     <ul id="cartItems"></ul>
-    <p><strong>Totaal: €<span id="total">0</span></strong></p>
+    <p><strong>Totaal: €<span id="total">0</span></strong></p><div class="discount-box">
+<input type="text" id="discountCode" placeholder="Kortingscode">
+<button onclick="applyDiscount()">Toepassen</button>
+<p id="discountMessage"></p>
+</div>
     <!-- <button onclick="checkoutWhatsApp()">Afrekenen via WhatsApp</button> -->
     <button onclick="checkoutEmail()">Bestellen via e-mail</button>
   </div>
