@@ -118,4 +118,25 @@ function checkoutEmail() {
     const mailtoLink = `mailto:powergenanabolics@proton.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
+}const discountCodes = {
+  "WELCOME10": 10,
+  "POWER20": 20
+};
+
+function applyDiscount() {
+  let code = document.getElementById("discountCode").value.toUpperCase();
+  let totalElement = document.getElementById("totalPrice");
+  let message = document.getElementById("discountMessage");
+
+  let total = parseFloat(totalElement.innerText);
+
+  if (discountCodes[code]) {
+    let discount = discountCodes[code];
+    let newTotal = total - (total * discount / 100);
+
+    totalElement.innerText = newTotal.toFixed(2);
+    message.innerText = "Kortingscode toegepast!";
+  } else {
+    message.innerText = "Ongeldige code.";
+  }
 }
