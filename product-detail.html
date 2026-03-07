@@ -15,7 +15,15 @@
 <body>
 
   <header>
-    <h1>GenPower Peptides & Zycare Supplements</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div>
+        <h1 style="margin: 0;">GenPower Peptides & Zycare Supplements</h1>
+      </div>
+      <div style="position: relative; font-size: 28px; cursor: pointer;" onclick="document.querySelector('.cart').scrollIntoView({behavior: 'smooth'})">
+        🛒
+        <span id="cartBadge" style="position: absolute; top: -8px; right: -8px; background: #ff6b6b; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">0</span>
+      </div>
+    </div>
     <nav class="nav">
       <a href="index.html">Producten</a>
       <a href="verzending.html">Verzending</a>
@@ -47,6 +55,13 @@
         <button onclick="addToCartFromDetail()" class="add-to-cart-btn">Toevoegen aan winkelwagen</button>
       </div>
     </div>
+  </div>
+
+  <div class="cart">
+    <h3>🛒 Winkelwagen</h3>
+    <ul id="cartItems"></ul>
+    <p><strong>Totaal: €<span id="total">0.00</span></strong></p>
+    <button onclick="window.location.href='index.html'" class="checkout-btn">← Terug naar Producten</button>
   </div>
 
   <footer>
@@ -131,9 +146,36 @@
       window.location.href = 'index.html';
     }
 
+    // Change quantity
+    function changeQuantity(id, amount) {
+      const cartItem = cart.find(item => item.id === id);
+      if (cartItem) {
+        cartItem.quantity += amount;
+        if (cartItem.quantity < 1) {
+          removeFromCart(id);
+        } else {
+          updateCart();
+        }
+      }
+    }
+
+    // Remove from cart
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      updateCart();
+    }
+
     // Cart functions (imported from script.js)
     function updateCart() {
       const list = document.getElementById("cartItems");
+      
+      // Update cart badge
+      const badge = document.getElementById("cartBadge");
+      if (badge) {
+        const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        badge.textContent = totalItems;
+      }
+      
       if (list) {
         list.innerHTML = "";
         let total = 0;
@@ -164,14 +206,19 @@
           if (price === "?" || price === undefined || price === null) {
             unknownPrice = true;
             itemHTML = `
-              <div>
-                <div>${item.name}</div>
-                <div style="font-size: 0.9em; color: #666;">Prijs: €?</div>
-              </div>
-              <div style="display: flex; gap: 5px; align-items: center;">
-                <span style="color: #999;">Qty: 1</span>
-                <button onclick="removeFromCart(${item.id})" style="background: #ddd; border: none; padding: 5px 8px; cursor: pointer; border-radius: 3px;">X</button>
-              </div>
+             <div>
+  <div>${item.name}
+</div>
+  <div style="font-size: 0.9em; color: #666;">Prijs: €7</div>
+
+  <div style="display:flex; gap:5px; align-items:center;">
+    <span style="color:#999;">Qty: 1</span>
+
+    <button onclick="r
+
+
+              
+div>
             `;
           } else {
             const numericPrice = parseFloat(price.toString().replace(",", "."));
@@ -180,9 +227,10 @@
             
             itemHTML = `
               <div>
-                <div>${item.name}</div>
-                <div style="font-size: 0.9em; color: #666;">EUR ${numericPrice.toFixed(2)} per stuk</div>
-              </div>
+                
+                
+              
+                div>
               <div style="display: flex; gap: 8px; align-items: center;">
                 <div style="display: flex; gap: 5px; align-items: center; border: 1px solid #ccc; border-radius: 3px; padding: 2px;">
                   <button onclick="changeQuantity(${item.id}, -1)" style="background: none; border: none; padding: 5px 8px; cursor: pointer; font-weight: bold;">-</button>

@@ -94,6 +94,14 @@ function removeFromCart(id) {
 
 function updateCart() {
     const list = document.getElementById("cartItems");
+    
+    // Update cart badge
+    const badge = document.getElementById("cartBadge");
+    if (badge) {
+      const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+      badge.textContent = totalItems;
+    }
+    
     list.innerHTML = "";
     let total = 0;
     let unknownPrice = false;
