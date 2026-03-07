@@ -52,27 +52,44 @@ function filterProducts() {
 
 // winkelwagen toevoegen
 function addToCart(id) {
-    console.log("addToCart called with id:", id);
-    console.log("products array:", products);
-    console.log("cart array:", cart);
-    
     if (!products || products.length === 0) {
         alert("Producten kunnen niet geladen worden!");
         return;
     }
     
     const product = products.find(p => p.id === id);
-    console.log("found product:", product);
     
     if (!product) {
         alert("Product niet gevonden!");
         return;
     }
     
-    cart.push(product);
-    console.log("Item added to cart. Cart is now:", cart);
+    const cartItem = cart.find(item => item.id === id);
+    
+    if (cartItem) {
+        cartItem.quantity = (cartItem.quantity || 1) + 1;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
+    
     updateCart();
-    alert(product.name + ' toegevoegd aan winkelwagen!');
+}
+
+function changeQuantity(id, amount) {
+    const cartItem = cart.find(item => item.id === id);
+    if (cartItem) {
+        cartItem.quantity += amount;
+        if (cartItem.quantity < 1) {
+            removeFromCart(id);
+        } else {
+            updateCart();
+        }
+    }
+}
+
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    updateCart();
 }
 
 function updateCart() {
@@ -81,29 +98,64 @@ function updateCart() {
     let total = 0;
     let unknownPrice = false;
 
-    cart.forEach(p => {
+    if (cart.length === 0) {
+        list.innerHTML = "<li style='color: #999;'>Winkelwagen is leeg</li>";
+        document.getElementById("total").textContent = "0.00";
+        return;
+    }
+
+    cart.forEach(item => {
         const li = document.createElement("li");
+        li.style.display = "flex";
+        li.style.justifyContent = "space-between";
+        li.style.alignItems = "center";
+        li.style.padding = "10px 0";
+        li.style.borderBottom = "1px solid #eee";
+        
+        const quantity = item.quantity || 1;
+        const price = item.price;
 
-        let price = p.price;
+        let itemHTML = "";
+        let itemTotal = 0;
 
-        // If price is a question mark
         if (price === "?" || price === undefined || price === null) {
             unknownPrice = true;
-            li.textContent = `${p.name} - €?`;
+            itemHTML = `
+                <div>
+                    <div>${item.name}</div>
+                    <div style="font-size: 0.9em; color: #666;">Prijs: €?</div>
+                </div>
+                <div style="display: flex; gap: 5px; align-items: center;">
+                    <span style="color: #999;">Qty: 1</span>
+                    <button onclick="removeFromCart(${item.id})" style="background: #ddd; border: none; padding: 5px 8px; cursor: pointer; border-radius: 3px;">X</button>
+                </div>
+            `;
         } else {
-            // Convert "34,34" → 34.34
-            const numericPrice = parseFloat(
-                price.toString().replace(",", ".")
-            );
-
-            total += numericPrice;
-            li.textContent = `${p.name} - €${numericPrice.toFixed(2)}`;
+            const numericPrice = parseFloat(price.toString().replace(",", "."));
+            itemTotal = numericPrice * quantity;
+            total += itemTotal;
+            
+            itemHTML = `
+                <div>
+                    <div>${item.name}</div>
+                    <div style="font-size: 0.9em; color: #666;">EUR ${numericPrice.toFixed(2)} per stuk</div>
+                </div>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                    <div style="display: flex; gap: 5px; align-items: center; border: 1px solid #ccc; border-radius: 3px; padding: 2px;">
+                        <button onclick="changeQuantity(${item.id}, -1)" style="background: none; border: none; padding: 5px 8px; cursor: pointer; font-weight: bold;">-</button>
+                        <span style="min-width: 30px; text-align: center;">${quantity}</span>
+                        <button onclick="changeQuantity(${item.id}, 1)" style="background: none; border: none; padding: 5px 8px; cursor: pointer; font-weight: bold;">+</button>
+                    </div>
+                    <div style="min-width: 70px; text-align: right; font-weight: bold;">EUR ${itemTotal.toFixed(2)}</div>
+                    <button onclick="removeFromCart(${item.id})" style="background: #ff6b6b; color: white; border: none; padding: 5px 8px; cursor: pointer; border-radius: 3px; font-size: 0.9em;">Verwijderen</button>
+                </div>
+            `;
         }
 
+        li.innerHTML = itemHTML;
         list.appendChild(li);
     });
 
-    // If any item had unknown price → total is "?"
     document.getElementById("total").textContent =
         unknownPrice ? "?" : total.toFixed(2);
 }
@@ -114,8 +166,9 @@ function checkoutWhatsApp() {
 
     let message = `Bestelling #${orderId}%0A%0A`;
 
-    cart.forEach(p => {
-        message += `${p.name} - €${p.price}%0A`;
+    cart.forEach(item => {
+        const qty = item.quantity || 1;
+        message += `${item.name} (x${qty}) - €${item.price}%0A`;
     });
 
     const total = document.getElementById("total").textContent;
@@ -131,8 +184,9 @@ function checkoutEmail() {
     let subject = `Bestelling #${orderId}`;
     let body = `Bestelling #${orderId}\n\n`;
 
-    cart.forEach(p => {
-        body += `${p.name} - €${p.price}\n`;
+    cart.forEach(item => {
+        const qty = item.quantity || 1;
+        body += `${item.name} (x${qty}) - €${item.price}\n`;
     });
 
     const total = document.getElementById("total").textContent;
@@ -161,8 +215,9 @@ function checkoutPayPal() {
     }
 
     let description = "Bestelling #" + orderId + ": ";
-    cart.forEach(p => {
-        description += p.name + " (€" + p.price + "), ";
+    cart.forEach(item => {
+        const qty = item.quantity || 1;
+        description += item.name + " (x" + qty + "), ";
     });
     description = description.slice(0, -2); // Remove last ", "
 
