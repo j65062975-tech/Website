@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productdetails - PowergenX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>GenPower Peptides & Zycare Supplements</h1>
+    <nav class="nav">
+      <a href="index.html">Producten</a>
+      <a href="verzending.html">Verzending</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <button class="back-btn" onclick="goBack()">← Terug</button>
+
+    <div class="product-detail">
+      <div class="product-images">
+        <div class="main-image">
+          <img id="mainImage" src="" alt="Product">
+        </div>
+        <div class="thumbnail-gallery">
+          <div id="thumbnailContainer"></div>
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 id="productName"></h1>
+        <p class="product-price"><strong>Prijs: €<span id="productPrice"></span></strong></p>
+        
+        <div class="product-details">
+          <p><strong>Categorie:</strong> <span id="productCategory"></span></p>
+          <p><strong>Productid:</strong> <span id="productId"></span></p>
+        </div>
+
+        <button onclick="addToCartFromDetail()" class="add-to-cart-btn">Toevoegen aan winkelwagen</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 PowergenX. Alle rechten voorbehouden.</p>
+    <p>Onze producten zijn uitsluitend bestemd voor volwassenen (18+). Raadpleeg een arts voordat u supplementen
+      gebruikt.</p>
+  </footer>
+
+  <script src="products.js"></script>
+  <script>
+    let currentProduct = null;
+
+    // Load product details
+    window.onload = function () {
+      const productData = localStorage.getItem('selectedProduct');
+      if (productData) {
+        currentProduct = JSON.parse(productData);
+        displayProductDetail();
+      } else {
+        document.querySelector('.product-detail').innerHTML = '<p>Product niet gevonden</p>';
+      }
+    };
+
+    function displayProductDetail() {
+      if (!currentProduct) return;
+
+      // Set basic info
+      document.getElementById('productName').textContent = currentProduct.name;
+      document.getElementById('productPrice').textContent = currentProduct.price;
+      document.getElementById('productCategory').textContent = currentProduct.category;
+      document.getElementById('productId').textContent = currentProduct.id;
+
+      // Set main image
+      const mainImageUrl = currentProduct.image || (currentProduct.images && currentProduct.images[0]);
+      document.getElementById('mainImage').src = mainImageUrl;
+      document.getElementById('mainImage').alt = currentProduct.name;
+
+      // Create thumbnails
+      const thumbnailContainer = document.getElementById('thumbnailContainer');
+      thumbnailContainer.innerHTML = '';
+      
+      if (currentProduct.images && currentProduct.images.length > 0) {
+        currentProduct.images.forEach((imgUrl, index) => {
+          const thumb = document.createElement('img');
+          thumb.src = imgUrl;
+          thumb.alt = `${currentProduct.name} foto ${index + 1}`;
+          thumb.className = 'thumbnail' + (index === 0 ? ' active' : '');
+          thumb.onclick = () => switchImage(imgUrl, index);
+          thumbnailContainer.appendChild(thumb);
+        });
+      }
+    }
+
+    function switchImage(imageUrl, index) {
+      document.getElementById('mainImage').src = imageUrl;
+      
+      // Update active thumbnail
+      document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+      });
+    }
+
+    function addToCartFromDetail() {
+      if (currentProduct) {
+        cart.push(currentProduct);
+        updateCart();
+        alert(currentProduct.name + ' toegevoegd aan winkelwagen!');
+      }
+    }
+
+    function goBack() {
+      window.location.href = 'index.html';
+    }
+
+    // Cart functions (imported from script.js)
+    let cart = [];
+
+    function updateCart() {
+      const list = document.getElementById("cartItems");
+      if (list) {
+        list.innerHTML = "";
+        let total = 0;
+        let unknownPrice = false;
+
+        cart.forEach(p => {
+          const li = document.createElement("li");
+
+          let price = p.price;
+
+          if (price === "?" || price === undefined || price === null) {
+            unknownPrice = true;
+            li.textContent = `${p.name} - €?`;
+          } else {
+            const numericPrice = parseFloat(
+              price.toString().replace(",", ".")
+            );
+
+            total += numericPrice;
+            li.textContent = `${p.name} - €${numericPrice.toFixed(2)}`;
+          }
+
+          list.appendChild(li);
+        });
+
+        if (document.getElementById("total")) {
+          document.getElementById("total").textContent =
+            unknownPrice ? "?" : total.toFixed(2);
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
