@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Productdetails - PowergenX</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Declare cart globally before anything else
+    let cart = [];
+  </script>
 </head>
 
 <body>
@@ -118,8 +122,6 @@
     }
 
     // Cart functions (imported from script.js)
-    let cart = [];
-
     function updateCart() {
       const list = document.getElementById("cartItems");
       if (list) {

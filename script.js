@@ -52,9 +52,27 @@ function filterProducts() {
 
 // winkelwagen toevoegen
 function addToCart(id) {
+    console.log("addToCart called with id:", id);
+    console.log("products array:", products);
+    console.log("cart array:", cart);
+    
+    if (!products || products.length === 0) {
+        alert("Producten kunnen niet geladen worden!");
+        return;
+    }
+    
     const product = products.find(p => p.id === id);
+    console.log("found product:", product);
+    
+    if (!product) {
+        alert("Product niet gevonden!");
+        return;
+    }
+    
     cart.push(product);
+    console.log("Item added to cart. Cart is now:", cart);
     updateCart();
+    alert(product.name + ' toegevoegd aan winkelwagen!');
 }
 
 function updateCart() {
@@ -151,10 +169,11 @@ function checkoutPayPal() {
     // Convert "34,34" → "34.34" for PayPal
     const numericTotal = parseFloat(total.replace(",", "."));
 
-    // PayPal.me link - replace YOUR_PAYPAL_USERNAME with your PayPal username
-    // Format: https://paypal.me/USERNAME/AMOUNT
-    const paypalLink = `https://www.paypal.me/powergenx/${numericTotal}`;
+    // PayPal.me link with currency code
+    // Format: https://paypal.me/USERNAME/AMOUNT?currency=EUR
+    const paypalLink = `https://www.paypal.me/powergenx/${numericTotal}?currency=EUR`;
 
+    console.log("PayPal link:", paypalLink);
     window.location.href = paypalLink;
 }
 
