@@ -128,24 +128,11 @@ let products = [
 
     // ===== TABLETS - ZYCARE BRAND =====
     { 
-      id: 10, 
-      name: "Zycare-Drol 50mg", 
-      price: "24,95", 
-      category: "tablets", 
-      brand: "Zycare", 
-      availability: "coming soon",
-      image: "/img/products/Zycare-Drol-50mg.jpg",
-      images: [
-        "/img/products/Zycare-Drol-50mg.jpg",
-        "/img/products/Zycare-Drol-50mg-2.jpg"
-      ] 
-    },
-    { 
       id: 11, 
-      name: "Zycare-Var 50mg", 
+      name: "Evolve Anavar", 
       price: "29,95", 
       category: "tablets", 
-      brand: "Zycare", 
+      brand: "Evolve", 
       availability: "coming soon",
       image: "/img/products/Zycare-Var-50mg.jpg",
       images: [
@@ -167,10 +154,10 @@ let products = [
     },
     { 
       id: 13, 
-      name: "Zycare-Tbol 25mg", 
+      name: "Evolve biolabs Tbol 25mg", 
       price: "22,95", 
       category: "tablets", 
-      brand: "Zycare", 
+      brand: "Evolve", 
       availability: "coming soon",
       image: "/img/products/Zycare-Tbol-25mg.jpg",
       images: [
@@ -189,73 +176,6 @@ let products = [
       images: [
         "/img/products/oxymethelone front side view.jpg",
         "/img/products/oxymethelone back side view.jpg"
-      ] 
-    },
-
-    // ===== PEPTIDES - ZYCARE BRAND =====
-    { 
-      id: 15, 
-      name: "Zycare-HGH 10IU", 
-      price: "54,95", 
-      category: "peptides", 
-      brand: "Zycare", 
-      availability: "coming soon",
-      image: "/img/products/Zycare-HGH-10IU.jpg",
-      images: [
-        "/img/products/Zycare-HGH-10IU.jpg",
-        "/img/products/Zycare-HGH-10IU-2.jpg"
-      ] 
-    },
-    { 
-      id: 16, 
-      name: "Zycare-IGF-1 1mg", 
-      price: "49,95", 
-      category: "peptides", 
-      brand: "Zycare", 
-      availability: "coming soon",
-      image: "/img/products/Zycare-IGF-1-1mg.jpg",
-      images: [
-        "/img/products/Zycare-IGF-1-1mg.jpg",
-        "/img/products/Zycare-IGF-1-1mg-2.jpg"
-      ] 
-    },
-    { 
-      id: 17, 
-      name: "Zycare-GHRP-6 5mg", 
-      price: "34,95", 
-      category: "peptides", 
-      brand: "Zycare", 
-      availability: "coming soon",
-      image: "/img/products/Zycare-GHRP-6-5mg.jpg",
-      images: [
-        "/img/products/Zycare-GHRP-6-5mg.jpg",
-        "/img/products/Zycare-GHRP-6-5mg-2.jpg"
-      ] 
-    },
-    { 
-      id: 18, 
-      name: "Zycare-CJC-1295 2mg", 
-      price: "39,95", 
-      category: "peptides", 
-      brand: "Zycare", 
-      availability: "coming soon",
-      image: "/img/products/Zycare-CJC-1295-2mg.jpg",
-      images: [
-        "/img/products/Zycare-CJC-1295-2mg.jpg",
-        "/img/products/Zycare-CJC-1295-2mg-2.jpg"
-      ] 
-    },
-    { 
-      id: 19, 
-      name: "Zycare-Ipamorelin 5mg", 
-      price: "44,95", 
-      category: "peptides", 
-      brand: "Zycare", 
-      availability: "coming soon",
-      image: "/img/products/Zycare-Ipamorelin-5mg.jpg",
-      images: [
-        "/img/products/Zycare-Ipamorelin-5mg.jpg",
-        "/img/products/Zycare-Ipamorelin-5mg-2.jpg"
       ] 
     },
 
