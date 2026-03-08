@@ -133,11 +133,10 @@ let products = [
       price: "29,95", 
       category: "tablets", 
       brand: "Evolve", 
-      availability: "coming soon",
-      image: "/img/products/Zycare-Var-50mg.jpg",
+      availability: "available",
+      image: "/img/products/Anavar.jpeg",
       images: [
-        "/img/products/Zycare-Var-50mg.jpg",
-        "/img/products/Zycare-Var-50mg-2.jpg"
+        "/img/products/Anavar.jpeg"
       ] 
     },
     { 
@@ -158,11 +157,10 @@ let products = [
       price: "22,95", 
       category: "tablets", 
       brand: "Evolve", 
-      availability: "coming soon",
-      image: "/img/products/Zycare-Tbol-25mg.jpg",
+      availability: "available",
+      image: "/img/products/Turinabol.jpeg",
       images: [
-        "/img/products/Zycare-Tbol-25mg.jpg",
-        "/img/products/Zycare-Tbol-25mg-2.jpg"
+        "/img/products/Turinabol.jpeg"
       ] 
     },
     { 
