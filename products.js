@@ -8,10 +8,10 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
-      image: "/img/products/DROSTA-ZYLONE-100mg.jpg",
+      image: "/img/products/masteron front side view.jpg",
       images: [
-        "/img/products/DROSTA-ZYLONE-100mg.jpg",
-        "/img/products/DROSTA-ZYLONE-100mg-2.jpg"
+        "/img/products/masteron front side view.jpg",
+        "/img/products/masteron back side view.jpg"
       ] 
     },
     { 
@@ -20,10 +20,10 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
-      image: "/img/products/NANDRO-ZYNOATE-250mg.jpg",
+      image: "/img/products/nanrdolone deca front view vials.jpg",
       images: [
-        "/img/products/NANDRO-ZYNOATE-250mg.jpg",
-        "/img/products/NANDRO-ZYNOATE-250mg-2.jpg"
+        "/img/products/nanrdolone deca front view vials.jpg",
+        "/img/products/nandrolone deca back side view.jpg"
       ] 
     },
     { 
@@ -32,10 +32,11 @@ let products = [
       price: "44,95", 
       category: "injections", 
       brand: "Zycare", 
-      image: "/img/products/Primozycare-100mg.jpg",
+      image: "/img/products/primobolon front side view 2.jpg",
       images: [
-        "/img/products/Primozycare-100mg.jpg",
-        "/img/products/Primozycare-100mg-2.jpg"
+        "/img/products/primobolon front side view 2.jpg",
+        "/img/products/primobolon front side view.jpg",
+        "/img/products/primobolon vials.jpg"
       ] 
     },
     { 
@@ -44,10 +45,11 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
-      image: "/img/products/TESTO-ZYPRO-100mg.jpg",
+      image: "/img/products/test p front view vials.jpg",
       images: [
-        "/img/products/TESTO-ZYPRO-100mg.jpg",
-        "/img/products/TESTO-ZYPRO-100mg-2.jpg"
+        "/img/products/test p front view vials.jpg",
+        "/img/products/test p front view.jpg",
+        "/img/products/test p vials front view.jpg"
       ] 
     },
     { 
@@ -56,10 +58,11 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
-      image: "/img/products/TESTO-ZYCYP-250mg.jpg",
+      image: "/img/products/test c front view vials 2.jpg",
       images: [
-        "/img/products/TESTO-ZYCYP-250mg.jpg",
-        "/img/products/TESTO-ZYCYP-250mg-2.jpg"
+        "/img/products/test c front view vials 2.jpg",
+        "/img/products/test c front view vials.jpg",
+        "/img/products/test c front view.jpg"
       ] 
     },
     { 
@@ -68,10 +71,11 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
-      image: "/img/products/Testo-Zyenate-250mg.jpg",
+      image: "/img/products/test e back side view.jpg",
       images: [
-        "/img/products/Testo-Zyenate-250mg.jpg",
-        "/img/products/Testo-Zyenate-250mg-2.jpg"
+        "/img/products/test e back side view.jpg",
+        "/img/products/test e front side view.jpg",
+        "/img/products/test e front view.jpg"
       ] 
     },
     { 
