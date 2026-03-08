@@ -72,15 +72,15 @@ let products = [
     },
     { 
       id: 7, 
-      name: "TESTO-ZYMIX 250mg", 
+      name: "Boldenon 250mg", 
       price: "43,95", 
       category: "injections", 
       brand: "Zycare", 
-      availability: "coming soon",
-      image: "/img/products/TESTO-ZYMIX-250mg.jpg",
+      availability: "available",
+      image: "/img/products/boldenon-250mg.jpg",
       images: [
-        "/img/products/TESTO-ZYMIX-250mg.jpg",
-        "/img/products/TESTO-ZYMIX-250mg-2.jpg"
+        "/img/products/boldenon-250mg.jpg",
+        "/img/products/boldenon-250mg-2.jpg"
       ] 
     },
     { 
