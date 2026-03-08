@@ -246,6 +246,7 @@ let products = [
       price: "34,95", 
       category: "libido", 
       brand: "Zycare", 
+      description: "1 strip costs 10 euro's",
       image: "/img/products/Cenforce 100 mg.jpeg",
       images: [
         "/img/products/Cenforce 100 mg.jpeg"
@@ -257,6 +258,7 @@ let products = [
       price: "39,95", 
       category: "libido", 
       brand: "Zycare", 
+      description: "1 strip costs 10 euro's",
       image: "/img/products/Cenforce d.jpeg",
       images: [
         "/img/products/Cenforce d.jpeg"
@@ -268,6 +270,7 @@ let products = [
       price: "44,95", 
       category: "libido", 
       brand: "Zycare", 
+      description: "1 strip costs 10 euro's",
       image: "/img/products/careforce fm.jpeg",
       images: [
         "/img/products/careforce fm.jpeg"
@@ -279,6 +282,7 @@ let products = [
       price: "37,95", 
       category: "libido", 
       brand: "Zycare", 
+      description: "1 strip costs 10 euro's",
       image: "/img/products/Zycare-Stamina-Formula.jpg",
       images: [
         "/img/products/Zycare-Stamina-Formula.jpg",
@@ -291,6 +295,7 @@ let products = [
       price: "49,95", 
       category: "libido", 
       brand: "Zycare", 
+      description: "1 strip costs 10 euro's",
       image: "/img/products/Cenforce 200.jpeg",
       images: [
         "/img/products/Cenforce 200.jpeg",
