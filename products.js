@@ -4,7 +4,7 @@ let products = [
     // ===== INJECTIONS - ZYCARE BRAND =====
     { 
       id: 1, 
-      name: "DROSTA-ZYLONE 100mg", 
+      name: "Masteron Propionate 100mg", 
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
@@ -17,7 +17,7 @@ let products = [
     },
     { 
       id: 2, 
-      name: "NANDRO-ZYNOATE 250mg", 
+      name: "Deca 250mg", 
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
@@ -30,7 +30,7 @@ let products = [
     },
     { 
       id: 3, 
-      name: "Primozycare 100mg/ml", 
+      name: "Primobolan 100mg/ml", 
       price: "44,95", 
       category: "injections", 
       brand: "Zycare", 
@@ -44,7 +44,7 @@ let products = [
     },
     { 
       id: 4, 
-      name: "TESTO ZYPRO 100mg", 
+      name: "Testosteron Propionate 100mg", 
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
@@ -58,7 +58,7 @@ let products = [
     },
     { 
       id: 5, 
-      name: "TESTO-ZYCYP 250mg", 
+      name: "Testosteron Cypionate 250mg", 
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
@@ -72,7 +72,7 @@ let products = [
     },
     { 
       id: 6, 
-      name: "Testo-Zyenate 250mg", 
+      name: "Testosteron Enanthate 250mg", 
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
@@ -99,7 +99,7 @@ let products = [
     },
     { 
       id: 8, 
-      name: "TREN-ZYACE 100mg", 
+      name: "Trenbolon Enanthate 100mg", 
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
@@ -114,7 +114,7 @@ let products = [
     },
     { 
       id: 9, 
-      name: "NANDRO-ZYPRO 100mg", 
+      name: "NPP 100mg", 
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
@@ -141,7 +141,7 @@ let products = [
     },
     { 
       id: 12, 
-      name: "Zycare-Win 10mg", 
+      name: "Winstrol 10mg", 
       price: "30,00", 
       category: "tablets", 
       brand: "Zycare", 
@@ -165,7 +165,7 @@ let products = [
     },
     { 
       id: 14, 
-      name: "OXYCARE 50mg", 
+      name: "Anadrol 50mg",
       price: "39,50", 
       category: "tablets", 
       brand: "Zycare", 
