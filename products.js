@@ -8,6 +8,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/masteron front side view.jpg",
       images: [
         "/img/products/masteron front side view.jpg",
@@ -20,6 +21,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
+      availability: "available",
       image: "/img/products/nanrdolone deca front view vials.jpg",
       images: [
         "/img/products/nanrdolone deca front view vials.jpg",
@@ -32,6 +34,7 @@ let products = [
       price: "44,95", 
       category: "injections", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/primobolon front side view 2.jpg",
       images: [
         "/img/products/primobolon front side view 2.jpg",
@@ -45,6 +48,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
+      availability: "available",
       image: "/img/products/test p front view vials.jpg",
       images: [
         "/img/products/test p front view vials.jpg",
@@ -58,6 +62,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/test c front view vials 2.jpg",
       images: [
         "/img/products/test c front view vials 2.jpg",
@@ -71,6 +76,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
+      availability: "available",
       image: "/img/products/test e back side view.jpg",
       images: [
         "/img/products/test e back side view.jpg",
@@ -84,6 +90,7 @@ let products = [
       price: "43,95", 
       category: "injections", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/TESTO-ZYMIX-250mg.jpg",
       images: [
         "/img/products/TESTO-ZYMIX-250mg.jpg",
@@ -96,10 +103,13 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
-      image: "/img/products/TREN-ZYACE-100mg.jpg",
+      availability: "available",
+      image: "/img/products/tren e front view.jpg",
       images: [
-        "/img/products/TREN-ZYACE-100mg.jpg",
-        "/img/products/TREN-ZYACE-100mg-2.jpg"
+        "/img/products/tren e front view.jpg",
+        "/img/products/tren e vial front viwe.jpg",
+        "/img/products/tren e vials .jpg",
+        "/img/products/tren e backage back side view.jpg"
       ] 
     },
     { 
@@ -108,6 +118,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/NANDRO-ZYPRO-100mg.jpg",
       images: [
         "/img/products/NANDRO-ZYPRO-100mg.jpg",
@@ -122,6 +133,7 @@ let products = [
       price: "24,95", 
       category: "tablets", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/Zycare-Drol-50mg.jpg",
       images: [
         "/img/products/Zycare-Drol-50mg.jpg",
@@ -134,6 +146,7 @@ let products = [
       price: "29,95", 
       category: "tablets", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/Zycare-Var-50mg.jpg",
       images: [
         "/img/products/Zycare-Var-50mg.jpg",
@@ -146,10 +159,10 @@ let products = [
       price: "19,95", 
       category: "tablets", 
       brand: "Zycare", 
-      image: "/img/products/Zycare-Win-10mg.jpg",
+      availability: "available",
+      image: "/img/products/winstrtol front side view.jpg",
       images: [
-        "/img/products/Zycare-Win-10mg.jpg",
-        "/img/products/Zycare-Win-10mg-2.jpg"
+        "/img/products/winstrtol front side view.jpg"
       ] 
     },
     { 
@@ -158,6 +171,7 @@ let products = [
       price: "22,95", 
       category: "tablets", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/Zycare-Tbol-25mg.jpg",
       images: [
         "/img/products/Zycare-Tbol-25mg.jpg",
@@ -166,14 +180,15 @@ let products = [
     },
     { 
       id: 14, 
-      name: "Zycare-Dian 50mg", 
+      name: "OXYCARE 50mg", 
       price: "27,95", 
       category: "tablets", 
       brand: "Zycare", 
-      image: "/img/products/Zycare-Dian-50mg.jpg",
+      availability: "available",
+      image: "/img/products/oxymethelone front side view.jpg",
       images: [
-        "/img/products/Zycare-Dian-50mg.jpg",
-        "/img/products/Zycare-Dian-50mg-2.jpg"
+        "/img/products/oxymethelone front side view.jpg",
+        "/img/products/oxymethelone back side view.jpg"
       ] 
     },
 
@@ -184,6 +199,7 @@ let products = [
       price: "54,95", 
       category: "peptides", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/Zycare-HGH-10IU.jpg",
       images: [
         "/img/products/Zycare-HGH-10IU.jpg",
@@ -196,6 +212,7 @@ let products = [
       price: "49,95", 
       category: "peptides", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/Zycare-IGF-1-1mg.jpg",
       images: [
         "/img/products/Zycare-IGF-1-1mg.jpg",
@@ -208,6 +225,7 @@ let products = [
       price: "34,95", 
       category: "peptides", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/Zycare-GHRP-6-5mg.jpg",
       images: [
         "/img/products/Zycare-GHRP-6-5mg.jpg",
@@ -220,6 +238,7 @@ let products = [
       price: "39,95", 
       category: "peptides", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/Zycare-CJC-1295-2mg.jpg",
       images: [
         "/img/products/Zycare-CJC-1295-2mg.jpg",
@@ -232,6 +251,7 @@ let products = [
       price: "44,95", 
       category: "peptides", 
       brand: "Zycare", 
+      availability: "coming soon",
       image: "/img/products/Zycare-Ipamorelin-5mg.jpg",
       images: [
         "/img/products/Zycare-Ipamorelin-5mg.jpg",
@@ -246,6 +266,7 @@ let products = [
       price: "34,95", 
       category: "libido", 
       brand: "Zycare", 
+      availability: "available",
       description: "1 strip costs 10 euro's",
       image: "/img/products/Cenforce 100 mg.jpeg",
       images: [
@@ -258,6 +279,7 @@ let products = [
       price: "39,95", 
       category: "libido", 
       brand: "Zycare", 
+      availability: "available",
       description: "1 strip costs 10 euro's",
       image: "/img/products/Cenforce d.jpeg",
       images: [
@@ -270,6 +292,7 @@ let products = [
       price: "44,95", 
       category: "libido", 
       brand: "Zycare", 
+      availability: "available",
       description: "1 strip costs 10 euro's",
       image: "/img/products/careforce fm.jpeg",
       images: [
@@ -282,6 +305,7 @@ let products = [
       price: "49,95", 
       category: "libido", 
       brand: "Zycare", 
+      availability: "available",
       description: "1 strip costs 10 euro's",
       image: "/img/products/Cenforce 200.jpeg",
       images: [
