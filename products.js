@@ -238,7 +238,7 @@ let products = [
     // ===== LIBIDO - ZYCARE BRAND =====
     { 
       id: 20, 
-      name: "Zycare-Libido Boost", 
+      name: "Zycare-Libido Boost - coming soon", 
       price: "34,95", 
       category: "libido", 
       brand: "Zycare", 
@@ -250,7 +250,7 @@ let products = [
     },
     { 
       id: 21, 
-      name: "Zycare-Vigor Max", 
+      name: "Zycare-Vigor Max - coming soon", 
       price: "39,95", 
       category: "libido", 
       brand: "Zycare", 
@@ -262,7 +262,7 @@ let products = [
     },
     { 
       id: 22, 
-      name: "Zycare-Performance Plus", 
+      name: "Zycare-Performance Plus - coming soon", 
       price: "44,95", 
       category: "libido", 
       brand: "Zycare", 
@@ -274,7 +274,7 @@ let products = [
     },
     { 
       id: 23, 
-      name: "Zycare-Stamina Formula", 
+      name: "Zycare-Stamina Formula - coming soon", 
       price: "37,95", 
       category: "libido", 
       brand: "Zycare", 
