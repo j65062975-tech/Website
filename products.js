@@ -246,10 +246,9 @@ let products = [
       price: "34,95", 
       category: "libido", 
       brand: "Zycare", 
-      image: "/img/products/Zycare-Libido-Boost.jpg",
+      image: "/img/products/Cenforce 100 mg.jpeg",
       images: [
-        "/img/products/Zycare-Libido-Boost.jpg",
-        "/img/products/Zycare-Libido-Boost-2.jpg"
+        "/img/products/Cenforce 100 mg.jpeg"
       ] 
     },
     { 
@@ -258,10 +257,9 @@ let products = [
       price: "39,95", 
       category: "libido", 
       brand: "Zycare", 
-      image: "/img/products/Zycare-Vigor-Max.jpg",
+      image: "/img/products/Cenforce d.jpeg",
       images: [
-        "/img/products/Zycare-Vigor-Max.jpg",
-        "/img/products/Zycare-Vigor-Max-2.jpg"
+        "/img/products/Cenforce d.jpeg"
       ] 
     },
     { 
@@ -270,10 +268,9 @@ let products = [
       price: "44,95", 
       category: "libido", 
       brand: "Zycare", 
-      image: "/img/products/Zycare-Performance-Plus.jpg",
+      image: "/img/products/careforce fm.jpeg",
       images: [
-        "/img/products/Zycare-Performance-Plus.jpg",
-        "/img/products/Zycare-Performance-Plus-2.jpg"
+        "/img/products/careforce fm.jpeg"
       ] 
     },
     { 
@@ -294,10 +291,10 @@ let products = [
       price: "49,95", 
       category: "libido", 
       brand: "Zycare", 
-      image: "/img/products/Cenforce-200mg.jpg",
+      image: "/img/products/Cenforce 200.jpeg",
       images: [
-        "/img/products/Cenforce-200mg.jpg",
-        "/img/products/Cenforce-200mg-2.jpg"
+        "/img/products/Cenforce 200.jpeg",
+        "/img/products/Cenforce 200 mg 2.jpeg"
       ] 
     }
 ];
