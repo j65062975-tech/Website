@@ -287,5 +287,17 @@ let products = [
         "/img/products/Zycare-Stamina-Formula.jpg",
         "/img/products/Zycare-Stamina-Formula-2.jpg"
       ] 
+    },
+    { 
+      id: 24, 
+      name: "Cenforce 200 mg", 
+      price: "49,95", 
+      category: "libido", 
+      brand: "Zycare", 
+      image: "/img/products/Cenforce-200mg.jpg",
+      images: [
+        "/img/products/Cenforce-200mg.jpg",
+        "/img/products/Cenforce-200mg-2.jpg"
+      ] 
     }
 ];
