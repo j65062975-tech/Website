@@ -48,6 +48,7 @@
         <p class="product-price"><strong>Prijs: €<span id="productPrice"></span></strong></p>
         
         <div class="product-details">
+          <p><strong>Merk:</strong> <span id="productBrand"></span></p>
           <p><strong>Categorie:</strong> <span id="productCategory"></span></p>
           <p><strong>Productid:</strong> <span id="productId"></span></p>
         </div>
@@ -91,6 +92,7 @@
       // Set basic info
       document.getElementById('productName').textContent = currentProduct.name;
       document.getElementById('productPrice').textContent = currentProduct.price;
+      document.getElementById('productBrand').textContent = currentProduct.brand || 'N/A';
       document.getElementById('productCategory').textContent = currentProduct.category;
       document.getElementById('productId').textContent = currentProduct.id;
 
