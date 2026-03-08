@@ -29,20 +29,6 @@ let products = [
       ] 
     },
     { 
-      id: 3, 
-      name: "Primobolan 100mg/ml", 
-      price: "44,95", 
-      category: "injections", 
-      brand: "Zycare", 
-      availability: "coming soon",
-      image: "/img/products/primobolon front side view 2.jpg",
-      images: [
-        "/img/products/primobolon front side view 2.jpg",
-        "/img/products/primobolon front side view.jpg",
-        "/img/products/primobolon vials.jpg"
-      ] 
-    },
-    { 
       id: 4, 
       name: "Testosteron Propionate 100mg", 
       price: "39,95", 
