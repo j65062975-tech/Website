@@ -263,7 +263,7 @@ let products = [
     { 
       id: 20, 
       name: "Cenforce-100 mg", 
-      price: "34,95", 
+      price: "10,00", 
       category: "libido", 
       brand: "Zycare", 
       availability: "available",
@@ -276,7 +276,7 @@ let products = [
     { 
       id: 21, 
       name: "Cenforce-D 100 + 60mg", 
-      price: "39,95", 
+      price: "10,00", 
       category: "libido", 
       brand: "Zycare", 
       availability: "available",
@@ -289,7 +289,7 @@ let products = [
     { 
       id: 22, 
       name: "Careforce FM 100 mg", 
-      price: "44,95", 
+      price: "10,00", 
       category: "libido", 
       brand: "Zycare", 
       availability: "available",
@@ -302,7 +302,7 @@ let products = [
     { 
       id: 24, 
       name: "Cenforce 200 mg", 
-      price: "49,95", 
+      price: "10,00", 
       category: "libido", 
       brand: "Zycare", 
       availability: "available",
