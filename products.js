@@ -130,7 +130,7 @@ let products = [
     { 
       id: 11, 
       name: "Evolve Anavar 10 mg", 
-      price: "30,00", 
+      price: "44,95", 
       category: "tablets", 
       brand: "Evolve", 
       availability: "available",
@@ -154,7 +154,7 @@ let products = [
     { 
       id: 13, 
       name: "Evolve biolabs Tbol 25mg", 
-      price: "30,00", 
+      price: "35,00", 
       category: "tablets", 
       brand: "Evolve", 
       availability: "available",
@@ -166,7 +166,7 @@ let products = [
     { 
       id: 14, 
       name: "OXYCARE 50mg", 
-      price: "30,00", 
+      price: "39,50", 
       category: "tablets", 
       brand: "Zycare", 
       availability: "available",
