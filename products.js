@@ -242,7 +242,7 @@ let products = [
     // ===== LIBIDO - ZYCARE BRAND =====
     { 
       id: 20, 
-      name: "Zycare-Libido Boost - coming soon", 
+      name: "Cenforce-100 mg", 
       price: "34,95", 
       category: "libido", 
       brand: "Zycare", 
@@ -254,7 +254,7 @@ let products = [
     },
     { 
       id: 21, 
-      name: "Zycare-Vigor Max - coming soon", 
+      name: "Cenforce-D 100 + 60mg", 
       price: "39,95", 
       category: "libido", 
       brand: "Zycare", 
@@ -266,7 +266,7 @@ let products = [
     },
     { 
       id: 22, 
-      name: "Zycare-Performance Plus - coming soon", 
+      name: "Careforce FM 100 mg", 
       price: "44,95", 
       category: "libido", 
       brand: "Zycare", 
