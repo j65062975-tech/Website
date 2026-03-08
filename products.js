@@ -77,9 +77,9 @@ let products = [
       category: "injections", 
       brand: "Zycare", 
       availability: "available",
-      image: "/img/products/test e back side view.jpg",
+      image: "/img/products/test e front view.jpg",
       images: [
-        "/img/products/test e back side view.jpg",
+        "/img/products/test  back ide view.jpg",
         "/img/products/test e front side view.jpg",
         "/img/products/test e front view.jpg"
       ] 
