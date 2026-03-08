@@ -277,19 +277,6 @@ let products = [
       ] 
     },
     { 
-      id: 23, 
-      name: "Zycare-Stamina Formula - coming soon", 
-      price: "37,95", 
-      category: "libido", 
-      brand: "Zycare", 
-      description: "1 strip costs 10 euro's",
-      image: "/img/products/Zycare-Stamina-Formula.jpg",
-      images: [
-        "/img/products/Zycare-Stamina-Formula.jpg",
-        "/img/products/Zycare-Stamina-Formula-2.jpg"
-      ] 
-    },
-    { 
       id: 24, 
       name: "Cenforce 200 mg", 
       price: "49,95", 
