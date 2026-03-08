@@ -129,7 +129,7 @@ let products = [
     // ===== TABLETS - ZYCARE BRAND =====
     { 
       id: 11, 
-      name: "Evolve Anavar", 
+      name: "Evolve Anavar 10 mg", 
       price: "30,00", 
       category: "tablets", 
       brand: "Evolve", 
