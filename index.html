@@ -77,6 +77,28 @@
 
   <script src="products.js"></script>
   <script src="script.js"></script>
+  
+  <!-- Chatbot Container -->
+  <div id="chatbotContainer" class="chatbot-container">
+    <div id="chatbotToggle" class="chatbot-toggle" onclick="toggleChatbot()">
+      💬
+    </div>
+    <div id="chatbotWindow" class="chatbot-window">
+      <div class="chatbot-header">
+        <h3>PowergenX Assistant</h3>
+        <button onclick="toggleChatbot()" class="chatbot-close">×</button>
+      </div>
+      <div id="chatbotMessages" class="chatbot-messages">
+        <div class="message bot-message">
+          Hallo! Ik ben uw PowergenX assistent. Hoe kan ik u helpen?
+        </div>
+      </div>
+      <div class="chatbot-input-area">
+        <input type="text" id="chatbotInput" placeholder="Typ uw vraag..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Verzenden</button>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
