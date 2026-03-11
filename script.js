@@ -387,3 +387,92 @@ function applyDiscount() {
     message.innerText = "Ongeldige code.";
   }
 }
+
+// Chatbot Functions
+function toggleChatbot() {
+  const chatbotWindow = document.getElementById('chatbotWindow');
+  chatbotWindow.classList.toggle('active');
+}
+
+function sendMessage() {
+  const input = document.getElementById('chatbotInput');
+  const message = input.value.trim();
+  
+  if (message) {
+    // Add user message to chat
+    addMessage(message, 'user');
+    input.value = '';
+    
+    // Get bot response
+    const response = getBotResponse(message);
+    
+    // Add bot response after a short delay to simulate typing
+    setTimeout(() => {
+      addMessage(response, 'bot');
+    }, 1000);
+  }
+}
+
+function handleKeyPress(event) {
+  if (event.key === 'Enter') {
+    sendMessage();
+  }
+}
+
+function addMessage(text, sender) {
+  const messagesContainer = document.getElementById('chatbotMessages');
+  const messageDiv = document.createElement('div');
+  messageDiv.classList.add('message');
+  messageDiv.classList.add(sender + '-message');
+  messageDiv.textContent = text;
+  messagesContainer.appendChild(messageDiv);
+  
+  // Scroll to bottom
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function getBotResponse(userMessage) {
+  const message = userMessage.toLowerCase();
+  
+  // Product information responses
+  if (message.includes('product') || message.includes('aanbod') || message.includes('assortiment')) {
+    return "We bieden verschillende categorieën producten aan: Injections, Tablets, Peptides en Libido producten. Bekijk onze producten op de website voor meer details!";
+  }
+  
+  // Shipping information
+  if (message.includes('verzend') || message.includes('bezorg') || message.includes('lever')) {
+    return "Bezorging binnen Nederland duurt meestal 1-2 werkdagen. Voor internationale verzending duurt het 3-5 werkdagen. Bekijk onze Verzending pagina voor meer informatie.";
+  }
+  
+  // Payment methods
+  if (message.includes('betaling') || message.includes('betalen') || message.includes('paypal') || message.includes('crypto')) {
+    return "We accepteren verschillende betaalmethoden: iDEAL, PayPal, creditcard en cryptocurrency (Bitcoin, Ethereum, Litecoin). U kunt kiezen bij het afrekenen.";
+  }
+  
+  // Age verification
+  if (message.includes('leeftijd') || message.includes('18') || message.includes('jarig')) {
+    return "Onze producten zijn uitsluitend bestemd voor volwassenen van 18 jaar en ouder. Bij betaling dient u dit te bevestigen.";
+  }
+  
+  // Contact information
+  if (message.includes('contact') || message.includes('help') || message.includes('ondersteuning')) {
+    return "U kunt ons bereiken via e-mail: powergenanabolics@proton.me of via WhatsApp. We reageren meestal binnen 24 uur.";
+  }
+  
+  // Price inquiries
+  if (message.includes('prijs') || message.includes('kosten') || message.includes('duur')) {
+    return "De meeste producten kosten €39,95. Sommige producten hebben variabele prijzen. Bekijk de individuele productpagina's voor exacte prijzen.";
+  }
+  
+  // Default responses
+  if (message.includes('hallo') || message.includes('hoi') || message.includes('dag')) {
+    return "Hallo! Waarmee kan ik u helpen?";
+  }
+  
+  if (message.includes('bedankt') || message.includes('dank')) {
+    return "Graag gedaan! Als u nog andere vragen heeft, laat het gerust weten.";
+  }
+  
+  // Default response
+  return "Ik begrijp uw vraag. Voor specifiekere informatie kunt u contact opnemen via e-mail of bekijk onze website voor meer details. Waarom denkt u dat ik u niet goed kan helpen?";
+}
