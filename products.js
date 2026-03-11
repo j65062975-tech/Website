@@ -105,10 +105,10 @@ let products = [
       category: "injections", 
       brand: "Zycare", 
       availability: "coming soon",
-      image: "/img/products/NANDRO-ZYPRO-100mg.jpg",
+      image: "/img/products/nandrolone front side view.jpg",
       images: [
-        "/img/products/NANDRO-ZYPRO-100mg.jpg",
-        "/img/products/NANDRO-ZYPRO-100mg-2.jpg"
+        "/img/products/nandrolone front side view.jpg",
+        "/img/products/nandrolone back side view.jpg"
       ] 
     },
 
