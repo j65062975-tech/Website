@@ -216,5 +216,55 @@ let products = [
         "/img/products/Cenforce 200.jpeg",
         "/img/products/Cenforce 200 mg 2.jpeg"
       ] 
+    },
+    
+    // ===== PEPTIDES - ZYCARE BRAND =====
+    { 
+      id: 25, 
+      name: "TB-500 2.0mg", 
+      price: "79,95", 
+      category: "peptides", 
+      brand: "Zycare", 
+      availability: "available",
+      image: "/img/products/tb500.jpg",
+      images: [
+        "/img/products/tb500.jpg"
+      ] 
+    },
+    { 
+      id: 26, 
+      name: "BPC-157 1.0mg", 
+      price: "69,95", 
+      category: "peptides", 
+      brand: "Zycare", 
+      availability: "available",
+      image: "/img/products/bpc157.jpg",
+      images: [
+        "/img/products/bpc157.jpg"
+      ] 
+    },
+    { 
+      id: 27, 
+      name: "Ipamorelin 2.0mg", 
+      price: "89,95", 
+      category: "peptides", 
+      brand: "Zycare", 
+      availability: "available",
+      image: "/img/products/ipamorelin.jpg",
+      images: [
+        "/img/products/ipamorelin.jpg"
+      ] 
+    },
+    { 
+      id: 28, 
+      name: "CJC-1295 2.0mg", 
+      price: "84,95", 
+      category: "peptides", 
+      brand: "Zycare", 
+      availability: "available",
+      image: "/img/products/cjc1295.jpg",
+      images: [
+        "/img/products/cjc1295.jpg"
+      ] 
     }
 ];

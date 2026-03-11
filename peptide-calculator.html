@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peptide Calculator - PowergenX</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .calculator-container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #1e293b;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .calculator-form {
+      display: grid;
+      gap: 20px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .form-group label {
+      font-weight: bold;
+      color: #00bfff;
+    }
+    
+    .form-group input, .form-group select {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #00bfff;
+      background: #020617;
+      color: white;
+      font-size: 16px;
+    }
+    
+    .result-box {
+      background: #020617;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    .result-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00bfff;
+      margin: 10px 0;
+    }
+    
+    .info-section {
+      margin-top: 30px;
+      padding: 20px;
+      background: #020617;
+      border-radius: 8px;
+    }
+    
+    .info-section h3 {
+      color: #00bfff;
+      margin-top: 0;
+    }
+    
+    .btn-calculate {
+      background: #00bfff;
+      color: #000;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 10px;
+    }
+    
+    .btn-calculate:hover {
+      background: #00a0d0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 191, 255, 0.3);
+    }
+    
+    .unit-selector {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    
+    .unit-option {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      background: #020617;
+      border: 1px solid #00bfff;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .unit-option.active {
+      background: #00bfff;
+      color: #000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 18+ leeftijds‑gate -->
+  <div id="ageGate" class="age-gate">
+    <div class="age-box">
+      <h2>Leeftijdsverificatie</h2>
+      <p>Je moet 18 jaar of ouder zijn om deze site te betreden.</p>
+      <button onclick="verifyAge()">Ik ben 18+</button>
+    </div>
+  </div>
+
+  <header>
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div>
+        <h1 style="margin: 0;">PowergenX Peptide Calculator</h1>
+      </div>
+      <div style="position: relative; font-size: 28px; cursor: pointer;" onclick="window.location.href='index.html'">
+        🏠
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Producten</a>
+      <a href="verzending.html">Verzending</a>
+      <a href="peptide-calculator.html" class="active">Peptide Calculator</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="calculator-container">
+      <h2>Bereken uw peptide dosering</h2>
+      <p>Gebruik onze calculator om de juiste dosering voor uw peptide behoeften te bepalen.</p>
+      
+      <form class="calculator-form" id="peptideCalculator">
+        <div class="form-group">
+          <label for="peptideType">Type Peptide:</label>
+          <select id="peptideType" required>
+            <option value="">Selecteer een peptide</option>
+            <option value="tb500">TB-500</option>
+            <option value="bpc157">BPC-157</option>
+            <option value="ipamorelin">Ipamorelin</option>
+            <option value="cjc1295">CJC-1295</option>
+            <option value="sermorelin">Sermorelin</option>
+            <option value="dsip">DSIP</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="weight">Gewicht (kg):</label>
+          <input type="number" id="weight" min="30" max="200" placeholder="Voer uw gewicht in" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="frequency">Frequentie van gebruik:</label>
+          <select id="frequency" required>
+            <option value="daily">Dagelijks</option>
+            <option value="twiceDaily">Twee keer per dag</option>
+            <option value="everyOtherDay">Om de dag</option>
+            <option value="threeTimesWeekly">3 keer per week</option>
+            <option value="weekly">Wekelijks</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Dosis Eenheid:</label>
+          <div class="unit-selector">
+            <div class="unit-option active" onclick="selectUnit(this, 'mcg')">µg (microgram)</div>
+            <div class="unit-option" onclick="selectUnit(this, 'mg')">mg (milligram)</div>
+          </div>
+          <input type="hidden" id="unit" value="mcg">
+        </div>
+        
+        <button type="button" class="btn-calculate" onclick="calculateDosage()">Bereken Dosering</button>
+      </form>
+      
+      <div class="result-box" id="resultBox" style="display: none;">
+        <h3>Aanbevolen Dosering</h3>
+        <div class="result-value" id="dosageResult">0 µg</div>
+        <p id="dosageDescription">Berekende dosering op basis van uw gegevens</p>
+      </div>
+      
+      <div class="info-section">
+        <h3>Informatie over Peptides</h3>
+        <p>Peptides zijn korte ketens van aminozuren die essentieel zijn voor verschillende lichaamsfuncties. Ze kunnen helpen bij herstel, spiergroei en algemene gezondheid.</p>
+        <p><strong>Belangrijk:</strong> Deze calculator geeft algemene richtlijnen. Raadpleeg altijd een medisch professional voordat u peptides gebruikt.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 PowergenX. Alle rechten voorbehouden.</p>
+    <p>Onze producten zijn uitsluitend bestemd voor volwassenen (18+). Raadpleeg een arts voordat u supplementen gebruikt.</p>
+  </footer>
+
+  <script>
+    // age gate
+    window.onload = function () {
+      if (localStorage.getItem("ageVerified") !== "true") {
+        document.getElementById("ageGate").style.display = "flex";
+      }
+    };
+    
+    function verifyAge() {
+      localStorage.setItem("ageVerified", "true");
+      document.getElementById("ageGate").style.display = "none";
+    }
+    
+    function selectUnit(element, unit) {
+      // Remove active class from all options
+      document.querySelectorAll('.unit-option').forEach(option => {
+        option.classList.remove('active');
+      });
+      
+      // Add active class to clicked option
+      element.classList.add('active');
+      
+      // Set hidden input value
+      document.getElementById('unit').value = unit;
+    }
+    
+    function calculateDosage() {
+      const peptideType = document.getElementById('peptideType').value;
+      const weight = parseFloat(document.getElementById('weight').value);
+      const frequency = document.getElementById('frequency').value;
+      const unit = document.getElementById('unit').value;
+      
+      // Validate inputs
+      if (!peptideType || isNaN(weight) || weight <= 0) {
+        alert('Vul alle vereiste velden correct in.');
+        return;
+      }
+      
+      // Base dosage per peptide type (in µg per kg)
+      const baseDosages = {
+        'tb500': 2.0,
+        'bpc157': 1.5,
+        'ipamorelin': 2.5,
+        'cjc1295': 1.0,
+        'sermorelin': 0.2,
+        'dsip': 0.5
+      };
+      
+      // Frequency multipliers
+      const frequencyMultipliers = {
+        'daily': 1,
+        'twiceDaily': 2,
+        'everyOtherDay': 0.5,
+        'threeTimesWeekly': 0.43,
+        'weekly': 0.14
+      };
+      
+      // Calculate dosage
+      const baseDosage = baseDosages[peptideType];
+      const frequencyMultiplier = frequencyMultipliers[frequency];
+      let dosage = weight * baseDosage * frequencyMultiplier;
+      
+      // Adjust for unit
+      if (unit === 'mg') {
+        dosage = dosage / 1000; // Convert µg to mg
+        dosage = Math.round(dosage * 1000) / 1000; // Round to 3 decimal places
+      } else {
+        dosage = Math.round(dosage); // Round to whole number for µg
+      }
+      
+      // Display result
+      document.getElementById('dosageResult').innerText = `${dosage} ${unit}`;
+      document.getElementById('dosageDescription').innerText = 
+        `Aanbevolen dosering voor ${getPeptideName(peptideType)} bij ${weight} kg lichaamsgewicht, ${getFrequencyText(frequency)}.`;
+      
+      document.getElementById('resultBox').style.display = 'block';
+      
+      // Scroll to results
+      document.getElementById('resultBox').scrollIntoView({behavior: 'smooth'});
+    }
+    
+    function getPeptideName(type) {
+      const names = {
+        'tb500': 'TB-500',
+        'bpc157': 'BPC-157',
+        'ipamorelin': 'Ipamorelin',
+        'cjc1295': 'CJC-1295',
+        'sermorelin': 'Sermorelin',
+        'dsip': 'DSIP'
+      };
+      return names[type] || type;
+    }
+    
+    function getFrequencyText(frequency) {
+      const texts = {
+        'daily': 'dagelijks gebruik',
+        'twiceDaily': 'twee keer per dag gebruik',
+        'everyOtherDay': 'om de dag gebruik',
+        'threeTimesWeekly': '3 keer per week gebruik',
+        'weekly': 'wekelijks gebruik'
+      };
+      return texts[frequency] || frequency;
+    }
+  </script>
+</body>
+
+</html>
