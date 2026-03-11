@@ -517,3 +517,23 @@ li {
     height: 300px;
   }
 }
+
+/* Coming Soon Badge */
+.coming-soon-badge {
+  background: #ff9900;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+/* Product Detail Availability */
+.product-detail .availability-info {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  background: rgba(255, 153, 0, 0.1);
+  border: 1px solid #ff9900;
+}

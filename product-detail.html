@@ -49,9 +49,10 @@
           <p><strong>Merk:</strong> <span id="productBrand"></span></p>
           <p><strong>Categorie:</strong> <span id="productCategory"></span></p>
           <p><strong>Productid:</strong> <span id="productId"></span></p>
+          <p id="availabilityInfo"></p>
         </div>
 
-        <button onclick="addToCartFromDetail()" class="add-to-cart-btn">Toevoegen aan winkelwagen</button>
+        <button id="addToCartBtn" onclick="addToCartFromDetail()" class="add-to-cart-btn">Toevoegen aan winkelwagen</button>
       </div>
     </div>
   </div>
@@ -93,6 +94,22 @@
       document.getElementById('productBrand').textContent = currentProduct.brand || 'N/A';
       document.getElementById('productCategory').textContent = currentProduct.category;
       document.getElementById('productId').textContent = currentProduct.id;
+      
+      // Set availability info
+      const availabilityInfo = document.getElementById('availabilityInfo');
+      const addToCartBtn = document.getElementById('addToCartBtn');
+      
+      if (currentProduct.availability === "coming soon") {
+        availabilityInfo.innerHTML = '<strong>Beschikbaarheid:</strong> <span style="background: #ff9900; color: white; padding: 3px 8px; border-radius: 4px;">Binnenkort beschikbaar</span>';
+        addToCartBtn.disabled = true;
+        addToCartBtn.style.opacity = "0.5";
+        addToCartBtn.textContent = "Binnenkort beschikbaar";
+        addToCartBtn.onclick = function() {
+          alert("Dit product is binnenkort beschikbaar. Houd onze website in de gaten voor updates!");
+        };
+      } else {
+        availabilityInfo.innerHTML = '<strong>Beschikbaarheid:</strong> <span style="color: #4CAF50;">Op voorraad</span>';
+      }
 
       // Set main image
       const mainImageUrl = currentProduct.image || (currentProduct.images && currentProduct.images[0]);

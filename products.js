@@ -266,5 +266,55 @@ let products = [
       images: [
         "/img/products/cjc1295.jpg"
       ] 
+    },
+    
+    // ===== COMING SOON PEPTIDES =====
+    { 
+      id: 29, 
+      name: "GHK-CU 1.0mg", 
+      price: "69,95", 
+      category: "peptides", 
+      brand: "Zycare", 
+      availability: "coming soon",
+      image: "/img/products/ghkcu.jpg",
+      images: [
+        "/img/products/ghkcu.jpg"
+      ] 
+    },
+    { 
+      id: 30, 
+      name: "BPC-157 2.0mg (Advanced)", 
+      price: "79,95", 
+      category: "peptides", 
+      brand: "Zycare", 
+      availability: "coming soon",
+      image: "/img/products/bpc157-advanced.jpg",
+      images: [
+        "/img/products/bpc157-advanced.jpg"
+      ] 
+    },
+    { 
+      id: 31, 
+      name: "TB-500 5.0mg", 
+      price: "99,95", 
+      category: "peptides", 
+      brand: "Zycare", 
+      availability: "coming soon",
+      image: "/img/products/tb500-advanced.jpg",
+      images: [
+        "/img/products/tb500-advanced.jpg"
+      ] 
+    },
+    { 
+      id: 32, 
+      name: "Retatiude 2.0mg", 
+      price: "89,95", 
+      category: "peptides", 
+      brand: "Zycare", 
+      availability: "coming soon",
+      image: "/img/products/retatiude.jpg",
+      images: [
+        "/img/products/retatiude.jpg"
+      ] 
     }
 ];

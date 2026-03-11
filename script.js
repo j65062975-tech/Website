@@ -34,11 +34,17 @@ function renderProducts(filter = "all") {
         div.onclick = () => showProductDetail(p.id);
 
         const imgTag = p.image ? `<img src="${p.image}" alt="${p.name}">` : "";
+        const availabilityTag = p.availability === "coming soon" ? '<span style="background: #ff9900; color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.8em; margin-top: 5px; display: inline-block;">Binnenkort beschikbaar</span>' : '';
+        const addToCartButton = p.availability === "coming soon" ? 
+          '<button disabled style="opacity: 0.5;">Binnenkort beschikbaar</button>' : 
+          `<button onclick="event.stopPropagation(); addToCart(${p.id})">Toevoegen aan winkelwagen</button>`;
+        
         div.innerHTML = `
       ${imgTag}
       <h3>${p.name}</h3>
       <p>€${p.price}</p>
-      <button onclick="event.stopPropagation(); addToCart(${p.id})">Toevoegen aan winkelwagen</button>
+      ${availabilityTag}
+      ${addToCartButton}
     `;
         grid.appendChild(div);
     });
