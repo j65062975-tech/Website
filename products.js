@@ -324,7 +324,7 @@ let products = [
       name: "Anavar 10mg", 
       price: "44,95", 
       category: "tablets", 
-      brand: "Zycare", 
+      brand: "Genetic Life Science", 
       availability: "available",
       image: "/img/products/dxvqunmlnr-1668635636.jpg",
       images: [
@@ -336,7 +336,7 @@ let products = [
       name: "Trenbolone Acetate 100mg", 
       price: "39,95", 
       category: "injections", 
-      brand: "Zycare", 
+      brand: "Genetic Life Science", 
       availability: "available",
       image: "/img/products/m4a9hyem95-1668548005.jpg",
       images: [
@@ -348,7 +348,7 @@ let products = [
       name: "Turinabol 25mg", 
       price: "35,00", 
       category: "tablets", 
-      brand: "Zycare", 
+      brand: "Genetic Life Science", 
       availability: "available",
       image: "/img/products/snyejvzz4o-1668708435.jpg",
       images: [
@@ -360,7 +360,7 @@ let products = [
       name: "Masteron Drostanolone 100mg", 
       price: "39,95", 
       category: "injections", 
-      brand: "Zycare", 
+      brand: "Genetic Life Science", 
       availability: "available",
       image: "/img/products/i9vt5cv6kf-1668531489.jpg",
       images: [
