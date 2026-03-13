@@ -316,5 +316,55 @@ let products = [
       images: [
         "/img/products/retatiude.jpg"
       ] 
+    },
+    
+    // ===== NEW PRODUCTS =====
+    { 
+      id: 33, 
+      name: "Anavar 10mg", 
+      price: "44,95", 
+      category: "tablets", 
+      brand: "Zycare", 
+      availability: "available",
+      image: "/img/products/dxvqunmlnr-1668635636.jpg",
+      images: [
+        "/img/products/dxvqunmlnr-1668635636.jpg"
+      ] 
+    },
+    { 
+      id: 34, 
+      name: "Trenbolone Acetate 100mg", 
+      price: "39,95", 
+      category: "injections", 
+      brand: "Zycare", 
+      availability: "available",
+      image: "/img/products/m4a9hyem95-1668548005.jpg",
+      images: [
+        "/img/products/m4a9hyem95-1668548005.jpg"
+      ] 
+    },
+    { 
+      id: 35, 
+      name: "Turinabol 25mg", 
+      price: "35,00", 
+      category: "tablets", 
+      brand: "Zycare", 
+      availability: "available",
+      image: "/img/products/snyejvzz4o-1668708435.jpg",
+      images: [
+        "/img/products/snyejvzz4o-1668708435.jpg"
+      ] 
+    },
+    { 
+      id: 36, 
+      name: "Masteron Drostanolone 100mg", 
+      price: "39,95", 
+      category: "injections", 
+      brand: "Zycare", 
+      availability: "available",
+      image: "/img/products/i9vt5cv6kf-1668531489.jpg",
+      images: [
+        "/img/products/i9vt5cv6kf-1668531489.jpg"
+      ] 
     }
 ];
