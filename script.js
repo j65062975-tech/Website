@@ -207,7 +207,7 @@ function checkoutEmail() {
     body += `\nTotaal: €${total}\n\nWe zullen snel reageren op uw bestelling!`;
 
     // encode voor speciale tekens
-    const mailtoLink = `mailto:powergenanabolics@proton.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:websitepowergenx@proton.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
 }
@@ -362,7 +362,7 @@ function getBotResponse(userMessage) {
   
   // Contact information
   if (message.includes('contact') || message.includes('help') || message.includes('ondersteuning')) {
-    return "U kunt ons bereiken via e-mail: powergenanabolics@proton.me of via WhatsApp. We reageren meestal binnen 24 uur.";
+    return "U kunt ons bereiken via e-mail: websitepowergenx@proton.me of via WhatsApp. We reageren meestal binnen 24 uur.";
   }
   
   // Price inquiries
