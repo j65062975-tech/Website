@@ -253,7 +253,6 @@ function checkoutCrypto() {
         return;
     }
 
-    const orderId = Date.now();
     const total = document.getElementById("total").textContent;
 
     // If total is "?", user must contact via email
@@ -265,110 +264,11 @@ function checkoutCrypto() {
     // Convert "34,34" → "34.34" for crypto payments
     const numericTotal = parseFloat(total.replace(",", "."));
 
-    // Show crypto payment options
-    showCryptoPaymentOptions(numericTotal, orderId);
-}
+    // Save cart total to localStorage for the crypto payment page
+    localStorage.setItem('cartTotal', numericTotal.toFixed(2));
 
-function showCryptoPaymentOptions(amount, orderId) {
-    // Create modal for crypto payment options
-    const modal = document.createElement('div');
-    modal.id = 'cryptoModal';
-    modal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    `;
-
-    modal.innerHTML = `
-        <div style="background: white; padding: 30px; border-radius: 10px; max-width: 500px; width: 90%;">
-            <h2>Cryptocurrency Betaling</h2>
-            <p>Bestelling #${orderId}</p>
-            <p>Totaalbedrag: €${amount.toFixed(2)}</p>
-            
-            <div style="margin: 20px 0;">
-                <h3>Kies uw cryptocurrency:</h3>
-                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-                    <button onclick="processCryptoPayment('bitcoin', ${amount})" style="padding: 15px; background: #f7931a; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
-                        Bitcoin (BTC)
-                    </button>
-                    <button onclick="processCryptoPayment('ethereum', ${amount})" style="padding: 15px; background: #627eea; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
-                        Ethereum (ETH)
-                    </button>
-                    <button onclick="processCryptoPayment('litecoin', ${amount})" style="padding: 15px; background: #345d9d; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
-                        Litecoin (LTC)
-                    </button>
-                </div>
-            </div>
-            
-            <p style="font-size: 14px; color: #666; margin-top: 20px;">
-                Na het kiezen van uw cryptocurrency wordt u doorgestuurd naar een veilige betalingspagina waar u de transactie kunt voltooien.
-            </p>
-            
-            <button onclick="closeCryptoModal()" style="float: right; background: #ccc; color: black; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
-                Annuleren
-            </button>
-        </div>
-    `;
-
-    document.body.appendChild(modal);
-}
-
-function closeCryptoModal() {
-    const modal = document.getElementById('cryptoModal');
-    if (modal) {
-        modal.remove();
-    }
-}
-
-function processCryptoPayment(currency, amount) {
-    // Close the modal
-    closeCryptoModal();
-    
-    // In a real implementation, you would integrate with a crypto payment processor
-    // For now, we'll simulate this with an alert and redirect to a confirmation page
-    
-    // Convert EUR amount to approximate crypto amounts (these are example rates)
-    let cryptoAmount;
-    let currencyName;
-    
-    switch(currency) {
-        case 'bitcoin':
-            // Approximate BTC rate (you would get real-time rates from an API)
-            cryptoAmount = (amount / 50000).toFixed(6); // Assuming 1 BTC = €50,000
-            currencyName = "Bitcoin (BTC)";
-            break;
-        case 'ethereum':
-            // Approximate ETH rate
-            cryptoAmount = (amount / 3000).toFixed(6); // Assuming 1 ETH = €3,000
-            currencyName = "Ethereum (ETH)";
-            break;
-        case 'litecoin':
-            // Approximate LTC rate
-            cryptoAmount = (amount / 150).toFixed(6); // Assuming 1 LTC = €150
-            currencyName = "Litecoin (LTC)";
-            break;
-        default:
-            cryptoAmount = "0.00";
-            currencyName = currency;
-    }
-    
-    // Show payment details
-    alert(`Cryptocurrency Betaling:\n\nBedrag: €${amount.toFixed(2)} (${cryptoAmount} ${currency.toUpperCase()})\nValuta: ${currencyName}\n\nIn een echte implementatie zou u nu doorgestuurd worden naar een crypto-betalingsprocessor.\n\nVoor een echte implementatie kunt u integreren met services zoals:\n- Coinbase Commerce\n- BitPay\n- NOWPayments\n- CoinGate`);
-    
-    // In a real implementation, you would redirect to the payment processor:
-    // window.location.href = `https://your-crypto-processor.com/pay?amount=${cryptoAmount}&currency=${currency}&order=${orderId}`;
-    
-    // For demonstration, we'll just show a success message
-    setTimeout(() => {
-        alert("Betaling succesvol verwerkt! U ontvangt binnenkort een bevestiging per e-mail.");
-    }, 1000);
+    // Redirect to the dedicated crypto payment page
+    window.location.href = `crypto-payment.html?amount=${numericTotal.toFixed(2)}`;
 }
 
 const discountCodes = {
