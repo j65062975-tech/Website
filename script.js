@@ -1,3 +1,65 @@
+// Security utility functions
+function sanitizeInput(input) {
+    // Basic XSS prevention
+    if (typeof input === 'string') {
+        return input
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#x27;");
+    }
+    return input;
+}
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function isValidCartItem(item) {
+    // Validate cart item structure
+    if (!item || typeof item !== 'object') return false;
+    if (!item.id || !item.name || !item.price) return false;
+    if (typeof item.id !== 'number') return false;
+    if (typeof item.name !== 'string') return false;
+    if (item.quantity && typeof item.quantity !== 'number') return false;
+    return true;
+}
+
+function escapeHtml(text) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
+function rateLimitCheck(action, maxCalls = 5, timeWindow = 60000) {
+    // Simple rate limiting using localStorage
+    const now = Date.now();
+    const key = `rate_limit_${action}`;
+    const data = JSON.parse(localStorage.getItem(key)) || {count: 0, timestamp: now};
+    
+    if (now - data.timestamp > timeWindow) {
+        // Reset counter if time window has passed
+        data.count = 0;
+        data.timestamp = now;
+    }
+    
+    if (data.count >= maxCalls) {
+        return false; // Rate limit exceeded
+    }
+    
+    // Increment counter
+    data.count++;
+    localStorage.setItem(key, JSON.stringify(data));
+    return true;
+}
+
 // product detail page
 function showProductDetail(productId) {
     const product = products.find(p => p.id === productId);
@@ -58,6 +120,12 @@ function filterProducts() {
 
 // winkelwagen toevoegen
 function addToCart(id) {
+    // Rate limiting
+    if (!rateLimitCheck('add_to_cart')) {
+        alert("Te veel pogingen. Wacht even voordat je opnieuw probeert.");
+        return;
+    }
+    
     if (!products || products.length === 0) {
         alert("Producten kunnen niet geladen worden!");
         return;
@@ -67,6 +135,12 @@ function addToCart(id) {
     
     if (!product) {
         alert("Product niet gevonden!");
+        return;
+    }
+    
+    // Validate product data
+    if (!product.name || typeof product.name !== 'string') {
+        alert("Productgegevens zijn ongeldig!");
         return;
     }
     
@@ -82,6 +156,12 @@ function addToCart(id) {
 }
 
 function changeQuantity(id, amount) {
+    // Rate limiting
+    if (!rateLimitCheck('change_quantity')) {
+        alert("Te veel pogingen. Wacht even voordat je opnieuw probeert.");
+        return;
+    }
+    
     const cartItem = cart.find(item => item.id === id);
     if (cartItem) {
         cartItem.quantity += amount;
@@ -94,6 +174,12 @@ function changeQuantity(id, amount) {
 }
 
 function removeFromCart(id) {
+    // Rate limiting
+    if (!rateLimitCheck('remove_from_cart')) {
+        alert("Te veel pogingen. Wacht even voordat je opnieuw probeert.");
+        return;
+    }
+    
     cart = cart.filter(item => item.id !== id);
     updateCart();
 }
@@ -118,6 +204,14 @@ function updateCart() {
         return;
     }
 
+    // Validate all cart items before processing
+    for (let item of cart) {
+        if (!isValidCartItem(item)) {
+            alert("Er is een probleem met uw winkelwagen. Neem contact op met de klantenservice.");
+            return;
+        }
+    }
+
     cart.forEach(item => {
         const li = document.createElement("li");
         li.style.display = "flex";
@@ -129,6 +223,9 @@ function updateCart() {
         const quantity = item.quantity || 1;
         const price = item.price;
 
+        // Sanitize item name for display
+        const sanitizedName = escapeHtml(item.name);
+
         let itemHTML = "";
         let itemTotal = 0;
 
@@ -136,7 +233,7 @@ function updateCart() {
             unknownPrice = true;
             itemHTML = `
                 <div>
-                    <div>${item.name}</div>
+                    <div>${sanitizedName}</div>
                     <div style="font-size: 0.9em; color: #666;">Prijs: €?</div>
                 </div>
                 <div style="display: flex; gap: 5px; align-items: center;">
@@ -151,7 +248,7 @@ function updateCart() {
             
             itemHTML = `
                 <div>
-                    <div>${item.name}</div>
+                    <div>${sanitizedName}</div>
                     <div style="font-size: 0.9em; color: #666;">EUR ${numericPrice.toFixed(2)} per stuk</div>
                 </div>
                 <div style="display: flex; gap: 8px; align-items: center;">
@@ -180,10 +277,17 @@ function checkoutWhatsApp() {
 
     let message = `Bestelling #${orderId}%0A%0A`;
 
-    cart.forEach(item => {
+    // Validate cart items
+    for (let item of cart) {
+        if (!item.name || typeof item.name !== 'string') {
+            alert("Er is een probleem met uw bestelling. Neem contact op met onze klantenservice.");
+            return;
+        }
         const qty = item.quantity || 1;
-        message += `${item.name} (x${qty}) - €${item.price}%0A`;
-    });
+        // Sanitize item names in cart
+        const sanitizedName = sanitizeInput(item.name);
+        message += `${sanitizedName} (x${qty}) - €${item.price}%0A`;
+    }
 
     const total = document.getElementById("total").textContent;
     message += `%0ATotaal: €${total}%0A%0AWe zullen snel reageren op uw bestelling!`;
@@ -198,10 +302,17 @@ function checkoutEmail() {
     let subject = `Bestelling #${orderId}`;
     let body = `Bestelling #${orderId}\n\n`;
 
-    cart.forEach(item => {
+    // Validate cart items
+    for (let item of cart) {
+        if (!item.name || typeof item.name !== 'string') {
+            alert("Er is een probleem met uw bestelling. Neem contact op met onze klantenservice.");
+            return;
+        }
         const qty = item.quantity || 1;
-        body += `${item.name} (x${qty}) - €${item.price}\n`;
-    });
+        // Sanitize item names in cart
+        const sanitizedName = sanitizeInput(item.name);
+        body += `${sanitizedName} (x${qty}) - €${item.price}\n`;
+    }
 
     const total = document.getElementById("total").textContent;
     body += `\nTotaal: €${total}\n\nWe zullen snel reageren op uw bestelling!`;

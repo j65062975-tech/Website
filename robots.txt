@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /img/
+Disallow: /products.js
+Disallow: /script.js
+Disallow: /SECURITY.md
+Disallow: /404.html
+
+User-agent: *
+Allow: /
+
+Sitemap: https://powergenx.com/sitemap.xml
+
+# Security directives
+# Prevent indexing of sensitive files
