@@ -112,28 +112,48 @@
     <div class="dashboard-container">
         <h1>Reddit Advertentie Bot Control Panel</h1>
         <p>Beheer uw automatische advertenties op Reddit-forums.</p>
+        <p style="background: #333c50; padding: 10px; border-radius: 5px; color: #FF9800;">
+            <strong>Beveiliging:</strong> Deze pagina is beveiligd met een wachtwoord. Standaardwachtwoord is: <code>powergenx2026DSDFE</code>
+        </p>
         
-        <div class="security-card">
-            <h3>Bot Status</h3>
-            <p>Status: <span id="botStatus" class="bot-inactive">Bot is gestopt</span></p>
-            <p>Laatste activiteit: <span id="lastActivity">Nog geen activiteit</span></p>
+        <!-- Password Protection -->
+        <div id="passwordSection" class="security-card">
+            <h3>Toegangscontrole</h3>
+            <p>Voer het wachtwoord in om toegang te krijgen tot de bot controls:</p>
+            <div style="text-align: center; margin: 20px 0;">
+                <input type="password" id="passwordInput" placeholder="Wachtwoord" style="padding: 10px; width: 200px; margin-right: 10px; border-radius: 5px; border: 1px solid #333;">
+                <button onclick="checkPassword()" class="control-button" style="background: #2196F3;">Toegang Verkrijgen</button>
+            </div>
         </div>
         
-        <div class="security-card">
-            <h3>Bot Controls</h3>
-            <p>Gebruik de knoppen hieronder om de Reddit bot te bedienen:</p>
+        <!-- Bot Controls (hidden by default) -->
+        <div id="botControls" style="display: none;">
+            <div class="security-card">
+                <h3>Bot Status</h3>
+                <p>Status: <span id="botStatus" class="bot-inactive">Bot is gestopt</span></p>
+                <p>Laatste activiteit: <span id="lastActivity">Nog geen activiteit</span></p>
+            </div>
             
-            <div style="text-align: center; margin: 20px 0;">
-                <button id="startButton" class="control-button start-button" onclick="startRedditBot()">
-                    Start Automatisch Plaatsen
-                </button>
-                <button id="stopButton" class="control-button stop-button" onclick="stopRedditBot()">
-                    Stop Automatisch Plaatsen
-                </button>
-                <br><br>
-                <button id="manualButton" class="control-button manual-button" onclick="manualPostToReddit()">
-                    Plaats Handmatige Advertentie
-                </button>
+            <div class="security-card">
+                <h3>Bot Controls</h3>
+                <p>Gebruik de knoppen hieronder om de Reddit bot te bedienen:</p>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <button id="startButton" class="control-button start-button" onclick="startRedditBot()">
+                        Start Automatisch Plaatsen
+                    </button>
+                    <button id="stopButton" class="control-button stop-button" onclick="stopRedditBot()">
+                        Stop Automatisch Plaatsen
+                    </button>
+                    <br><br>
+                    <button id="manualButton" class="control-button manual-button" onclick="manualPostToReddit()">
+                        Plaats Handmatige Advertentie
+                    </button>
+                    <br><br>
+                    <button class="control-button" onclick="logout()" style="background: #6c757d;">
+                        Uitloggen
+                    </button>
+                </div>
             </div>
         </div>
         
@@ -163,6 +183,62 @@
     </footer>
 
     <script>
+        // Password protection
+        const CORRECT_PASSWORD = "powergenx2026DSDFE"; // Change this to your preferred password
+        
+        function checkPassword() {
+            const passwordInput = document.getElementById('passwordInput');
+            const passwordSection = document.getElementById('passwordSection');
+            const botControls = document.getElementById('botControls');
+            
+            if (passwordInput.value === CORRECT_PASSWORD) {
+                // Save login token for auto-login
+                localStorage.setItem('redditBotToken', 'loggedIn');
+                localStorage.setItem('redditBotLoginTime', Date.now().toString());
+                
+                passwordSection.style.display = 'none';
+                botControls.style.display = 'block';
+                console.log("Toegang verleend tot Reddit bot controls");
+            } else {
+                alert("Onjuist wachtwoord. Toegang geweigerd.");
+                console.log("Onjuiste wachtwoordpoging");
+            }
+        }
+        
+        // Allow Enter key to submit password
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('passwordInput');
+            if (passwordInput) {
+                passwordInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        checkPassword();
+                    }
+                });
+            }
+        });
+        
+        // Logout function
+        function logout() {
+            // Clear login tokens
+            localStorage.removeItem('redditBotToken');
+            localStorage.removeItem('redditBotLoginTime');
+            
+            // Show password section and hide bot controls
+            const passwordSection = document.getElementById('passwordSection');
+            const botControls = document.getElementById('botControls');
+            
+            passwordSection.style.display = 'block';
+            botControls.style.display = 'none';
+            
+            // Clear password input
+            const passwordInput = document.getElementById('passwordInput');
+            if (passwordInput) {
+                passwordInput.value = '';
+            }
+            
+            console.log("Uitgelogd van Reddit bot controls");
+        }
+        
         // Add logging functionality
         const originalLog = console.log;
         const logContainer = document.getElementById('logContainer');
@@ -229,9 +305,45 @@
             setInterval(updateBotUI, 5000);
         }
         
+        // Auto-login functionality (for your convenience)
+        function autoLogin() {
+            // Check if there's a saved login token
+            const loginToken = localStorage.getItem('redditBotToken');
+            const loginTimestamp = localStorage.getItem('redditBotLoginTime');
+            
+            // Check if login is still valid (24 hours)
+            if (loginToken && loginTimestamp) {
+                const now = Date.now();
+                const loginTime = parseInt(loginTimestamp);
+                const twentyFourHours = 24 * 60 * 60 * 1000;
+                
+                if (now - loginTime < twentyFourHours) {
+                    // Auto-login
+                    const passwordSection = document.getElementById('passwordSection');
+                    const botControls = document.getElementById('botControls');
+                    
+                    passwordSection.style.display = 'none';
+                    botControls.style.display = 'block';
+                    console.log("Automatisch ingelogd");
+                    return true;
+                } else {
+                    // Clear expired login
+                    localStorage.removeItem('redditBotToken');
+                    localStorage.removeItem('redditBotLoginTime');
+                }
+            }
+            return false;
+        }
+        
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             console.log("Reddit Bot Control Panel geladen");
+            
+            // Try auto-login
+            if (!autoLogin()) {
+                console.log("Handmatige login vereist");
+            }
+            
             updateBotUI();
         });
     </script>
