@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>Reddit Bot Control - PowergenX</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="reddit-bot.js"></script>
+    <style>
+        .dashboard-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #1e293b;
+            border-radius: 12px;
+        }
+        
+        .security-card {
+            background: #0f172a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .bot-active {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .bot-inactive {
+            color: #F44336;
+            font-weight: bold;
+        }
+        
+        .control-button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 10px 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        
+        .control-button:hover {
+            background: #0b7dda;
+        }
+        
+        .start-button {
+            background: #4CAF50;
+        }
+        
+        .start-button:hover {
+            background: #45a049;
+        }
+        
+        .stop-button {
+            background: #F44336;
+        }
+        
+        .stop-button:hover {
+            background: #d32f2f;
+        }
+        
+        .manual-button {
+            background: #FF9800;
+        }
+        
+        .manual-button:hover {
+            background: #f57c00;
+        }
+        
+        .log-entry {
+            background: #333c50;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .log-container {
+            max-height: 300px;
+            overflow-y: auto;
+            background: #0f172a;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PowergenX Supplements</h1>
+        <nav class="nav">
+            <a href="index.html">Producten</a>
+            <a href="verzending.html">Verzending</a>
+            <a href="peptide-calculator.html">Peptide Calculator</a>
+            <a href="crypto-payment.html">Crypto Betaling</a>
+            <a href="security-dashboard.html">Security Dashboard</a>
+            <a href="reddit-bot-control.html" class="active">Reddit Bot</a>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <h1>Reddit Advertentie Bot Control Panel</h1>
+        <p>Beheer uw automatische advertenties op Reddit-forums.</p>
+        
+        <div class="security-card">
+            <h3>Bot Status</h3>
+            <p>Status: <span id="botStatus" class="bot-inactive">Bot is gestopt</span></p>
+            <p>Laatste activiteit: <span id="lastActivity">Nog geen activiteit</span></p>
+        </div>
+        
+        <div class="security-card">
+            <h3>Bot Controls</h3>
+            <p>Gebruik de knoppen hieronder om de Reddit bot te bedienen:</p>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <button id="startButton" class="control-button start-button" onclick="startRedditBot()">
+                    Start Automatisch Plaatsen
+                </button>
+                <button id="stopButton" class="control-button stop-button" onclick="stopRedditBot()">
+                    Stop Automatisch Plaatsen
+                </button>
+                <br><br>
+                <button id="manualButton" class="control-button manual-button" onclick="manualPostToReddit()">
+                    Plaats Handmatige Advertentie
+                </button>
+            </div>
+        </div>
+        
+        <div class="security-card">
+            <h3>Bot Instellingen</h3>
+            <p>Huidige instellingen:</p>
+            <ul>
+                <li>Subreddits: supplements, health, fitness, nutrition</li>
+                <li>Interval: Elke 60 minuten</li>
+                <li>Producten: 3 verschillende producten worden willekeurig geselecteerd</li>
+            </ul>
+            <p><strong>Opmerking:</strong> In deze demo-versie worden advertenties alleen gesimuleerd. Voor een volledige implementatie is integratie met de Reddit API vereist.</p>
+        </div>
+        
+        <div class="security-card">
+            <h3>Activiteitenlog</h3>
+            <div id="logContainer" class="log-container">
+                <div class="log-entry">Bot geladen en klaar voor gebruik</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 PowergenX. Alle rechten voorbehouden.</p>
+        <p>Onze producten zijn uitsluitend bestemd voor volwassenen (18+). Raadpleeg een arts voordat u supplementen gebruikt.</p>
+    </footer>
+
+    <script>
+        // Add logging functionality
+        const originalLog = console.log;
+        const logContainer = document.getElementById('logContainer');
+        
+        console.log = function(message) {
+            // Call the original console.log
+            originalLog.apply(console, arguments);
+            
+            // Add to our log container
+            if (logContainer) {
+                const logEntry = document.createElement('div');
+                logEntry.className = 'log-entry';
+                logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+                logContainer.appendChild(logEntry);
+                logContainer.scrollTop = logContainer.scrollHeight;
+            }
+        };
+        
+        // Manual post function with UI feedback
+        function manualPostToReddit() {
+            if (window.redditBot) {
+                console.log("Handmatige post geïnitieerd...");
+                const result = window.redditBot.manualPost();
+                console.log("Handmatige post voltooid!");
+            } else {
+                console.log("Fout: Reddit bot niet geladen");
+            }
+        }
+        
+        // Update UI function
+        function updateBotUI() {
+            if (window.redditBot) {
+                const statusElement = document.getElementById('botStatus');
+                const activityElement = document.getElementById('lastActivity');
+                
+                if (statusElement) {
+                    statusElement.textContent = window.redditBot.isRunning ? 'Bot is actief' : 'Bot is gestopt';
+                    statusElement.className = window.redditBot.isRunning ? 'bot-active' : 'bot-inactive';
+                }
+                
+                if (activityElement && window.redditBot.lastPostTime > 0) {
+                    const timeString = new Date(window.redditBot.lastPostTime).toLocaleString('nl-NL');
+                    activityElement.textContent = timeString;
+                }
+            }
+        }
+        
+        // Override bot methods to update UI
+        if (window.redditBot) {
+            const originalStart = window.redditBot.start.bind(window.redditBot);
+            const originalStop = window.redditBot.stop.bind(window.redditBot);
+            
+            window.redditBot.start = function() {
+                originalStart();
+                updateBotUI();
+            };
+            
+            window.redditBot.stop = function() {
+                originalStop();
+                updateBotUI();
+            };
+            
+            // Set up interval to update UI periodically
+            setInterval(updateBotUI, 5000);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Reddit Bot Control Panel geladen");
+            updateBotUI();
+        });
+    </script>
+</body>
+</html>
