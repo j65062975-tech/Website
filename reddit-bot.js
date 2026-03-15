@@ -9,32 +9,32 @@ class RedditBot {
     this.lastPostTime = 0;
     this.isRunning = false;
     
-    // Product information for posts
+    // Product information for posts (one from each category)
     this.products = [
-      {
-        name: "Advanced Peptide Blend",
-        description: "Premium peptide supplement for enhanced recovery and performance",
-        price: "€39.95",
-        url: "https://yourwebsite.com/product-detail.html?id=1"
-      },
       {
         name: "Libido Enhancement Formula",
         description: "Natural formula to boost libido and sexual health",
         price: "€44.95",
-        url: "https://yourwebsite.com/product-detail.html?id=2"
+        url: "https://yourwebsite.com/product-detail.html?id=libido1"
       },
       {
         name: "Immune Support Injection",
         description: "High-quality injection for immune system support",
         price: "€59.95",
-        url: "https://yourwebsite.com/product-detail.html?id=3"
+        url: "https://yourwebsite.com/product-detail.html?id=inject1"
+      },
+      {
+        name: "Energy Boosting Tablets",
+        description: "Premium tablets for sustained energy and focus",
+        price: "€34.95",
+        url: "https://yourwebsite.com/product-detail.html?id=tablet1"
       }
     ];
     
     // Common questions and responses
     this.faqResponses = {
       "shipping": "We offer fast shipping within 1-2 business days in the Netherlands and 3-5 business days internationally.",
-      "payment": "We accept various payment methods including iDEAL, PayPal, credit card, and cryptocurrency (Bitcoin, Ethereum, Litecoin).",
+      "payment": "We accept cryptocurrency payments (Bitcoin, Ethereum, Litecoin) via our secure payment portal. Visit our Crypto Payment page for more details.",
       "quality": "All our products are laboratory tested for purity and potency. We work with certified suppliers only.",
       "age": "Our products are exclusively for adults 18 years and older.",
       "contact": "You can reach us at websitepowergenx@proton.me or via WhatsApp. We typically respond within 24 hours."
@@ -141,7 +141,7 @@ ${product.description}
 
 **FAQ:**
 - Shipping: Fast delivery within 1-2 business days (NL) or 3-5 business days (international)
-- Payment: We accept iDEAL, PayPal, credit card, and cryptocurrency
+- Payment: We accept cryptocurrency payments (Bitcoin, Ethereum, Litecoin) via our secure payment portal
 - Quality: All products are laboratory tested for purity and potency
 
 For questions, contact us at websitepowergenx@proton.me

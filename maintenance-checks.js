@@ -1,4 +1,4 @@
-// Maintenance and Security Check Functions
+ // Maintenance and Security Check Functions
 // This file contains helper functions for periodic security checks
 
 // Check for outdated links
