@@ -91,6 +91,16 @@
             margin-top: 0;
             color: #00bfff;
         }
+        
+        .bot-active {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .bot-inactive {
+            color: #F44336;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -165,6 +175,31 @@
             <p><strong>Email:</strong> websitepowergenx@proton.me</p>
             <p><strong>Reactietijd:</strong> Binnen 24 uur</p>
         </div>
+        
+        <div class="security-card">
+            <h3>Reddit Advertentie Bot</h3>
+            <p>Automatisch advertenties plaatsen op Reddit-forums.</p>
+            
+            <div style="margin: 20px 0;">
+                <button onclick="startRedditBot()" style="background: #4CAF50; color: white; border: none; padding: 10px 20px; margin-right: 10px; border-radius: 5px; cursor: pointer;">
+                    Start Bot
+                </button>
+                <button onclick="stopRedditBot()" style="background: #F44336; color: white; border: none; padding: 10px 20px; margin-right: 10px; border-radius: 5px; cursor: pointer;">
+                    Stop Bot
+                </button>
+                <button onclick="postToReddit()" style="background: #2196F3; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                    Plaats Handmatige Post
+                </button>
+            </div>
+            
+            <div style="background: #333c50; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                <h4>Bot Status:</h4>
+                <p id="botStatus">Bot is gestopt</p>
+                
+                <h4>Laatste Activiteit:</h4>
+                <p id="lastActivity">Nog geen activiteit</p>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -172,6 +207,7 @@
         <p>Onze producten zijn uitsluitend bestemd voor volwassenen (18+). Raadpleeg een arts voordat u supplementen gebruikt.</p>
     </footer>
 
+    <script src="reddit-bot.js"></script>
     <script>
         // Simple security check function
         function runSecurityCheck() {
