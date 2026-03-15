@@ -61,7 +61,7 @@ class RedditBot {
       
       if (activityElement && this.lastPostTime > 0) {
         const timeString = new Date(this.lastPostTime).toLocaleString('nl-NL');
-        activityElement.textContent = `Laatste post: ${timeString}`;
+        activityElement.textContent = timeString;
       }
     }
   }
@@ -73,6 +73,7 @@ class RedditBot {
       window.startRedditBot = () => this.start();
       window.stopRedditBot = () => this.stop();
       window.postToReddit = () => this.manualPost();
+      window.manualPostToReddit = () => this.manualPost();
     }
   }
   
@@ -109,6 +110,7 @@ class RedditBot {
       if (this.isRunning) {
         this.postAdvertisement();
         this.lastPostTime = Date.now();
+        this.updateUI();
         this.schedulePosting(); // Schedule next post
       }
     }, timeToWait);
@@ -179,8 +181,10 @@ ${content}
   
   // Manual post function
   manualPost() {
-    this.postAdvertisement();
-    this.lastPostTime = Date.now();
+    console.log("Manual post initiated...");
+    const result = this.postAdvertisement();
+    console.log("Manual post completed!");
+    return result;
   }
   
   // Respond to comments (simulated)
