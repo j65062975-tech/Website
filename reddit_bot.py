@@ -28,22 +28,22 @@ class RedditBot:
         # Product information for posts (one from each category)
         self.products = [
             {
-                "name": "Libido Enhancement Formula",
-                "description": "Natural formula to boost libido and sexual health",
-                "price": "€44.95",
-                "url": "https://yourwebsite.com/product-detail.html?id=libido1"
+                "name": "NeuroEnhance Cognitive Booster",
+                "description": "Advanced nootropic blend to enhance focus, memory, and mental clarity",
+                "price": "€49.95",
+                "url": "https://yourwebsite.com/product-detail.html?id=cognitive1"
             },
             {
-                "name": "Immune Support Injection",
-                "description": "High-quality injection for immune system support",
-                "price": "€59.95",
-                "url": "https://yourwebsite.com/product-detail.html?id=inject1"
+                "name": "Metabolic Burn Fat Loss Capsules",
+                "description": "Scientifically formulated capsules to accelerate fat burning and metabolism",
+                "price": "€42.95",
+                "url": "https://yourwebsite.com/product-detail.html?id=metabolic1"
             },
             {
-                "name": "Energy Boosting Tablets",
-                "description": "Premium tablets for sustained energy and focus",
-                "price": "€34.95",
-                "url": "https://yourwebsite.com/product-detail.html?id=tablet1"
+                "name": "JointFlex Mobility Complex",
+                "description": "Premium joint support formula for improved mobility and reduced inflammation",
+                "price": "€37.95",
+                "url": "https://yourwebsite.com/product-detail.html?id=joint1"
             }
         ]
         

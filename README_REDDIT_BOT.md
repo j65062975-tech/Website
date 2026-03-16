@@ -1,6 +1,6 @@
 # PowergenX Reddit Bot - Lokale Python Versie
 
-Deze map bevat een lokale Python-versie van de Reddit bot die je op je eigen computer kunt draaien.
+Deze map bevat een lokale Python-versie van de Reddit bot die je op je eigen computer kunt draaien. De webversie is verwijderd omdat je de bot lokaal wilt draaien zonder browser.
 
 ## Bestanden
 
@@ -28,7 +28,7 @@ Als de bot draait, kun je de volgende commando's gebruiken:
 
 ## Functionaliteit
 
-De Python bot heeft dezelfde functionaliteit als de webversie:
+De Python bot heeft dezelfde functionaliteit als de verwijderde webversie:
 
 - Automatisch plaatsen van advertenties in willekeurige subreddits
 - Handmatig plaatsen van advertenties
