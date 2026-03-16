@@ -1,0 +1,4 @@
+# Requirements for Reddit Bot
+# This bot only uses standard Python libraries, so no additional packages are needed
+# For a real Reddit implementation, you would need:
+# praw>=7.0.0
