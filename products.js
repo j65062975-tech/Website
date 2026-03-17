@@ -162,6 +162,18 @@ let products = [
         "/img/products/oxymethelone back side view.jpg"
       ] 
     },
+    { 
+      id: 15, 
+      name: "Proviron 25mg",
+      price: "45,00", 
+      category: "tablets", 
+      brand: "Zycare", 
+      availability: "available",
+      image: "/img/products/proviron.jpg",
+      images: [
+        "/img/products/proviron.jpg"
+      ] 
+    },
 
     // ===== LIBIDO - ZYCARE BRAND =====
     { 
