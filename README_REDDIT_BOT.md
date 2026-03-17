@@ -21,6 +21,8 @@ De bot plaatst advertenties voor de volgende producten:
 - Winstrol 10mg
 - Proviron 25mg
 
+*Opmerking: Peptide producten zijn verwijderd uit het assortiment.*
+
 ## Gebruik
 
 1. Zorg dat je Python 3.6+ geïnstalleerd hebt
