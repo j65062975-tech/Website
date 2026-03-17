@@ -9,10 +9,10 @@ let products = [
       category: "injections", 
       brand: "Zycare", 
       availability: "coming soon",
-      image: "/img/products/masteron front side view.jpg",
+      image: "img/products/masteron front side view.jpg",
       images: [
-        "/img/products/masteron front side view.jpg",
-        "/img/products/masteron back side view.jpg"
+        "img/products/masteron front side view.jpg",
+        "img/products/masteron back side view.jpg"
       ] 
     },
     { 
@@ -22,10 +22,10 @@ let products = [
       category: "injections", 
       brand: "Zycare", 
       availability: "available",
-      image: "/img/products/nanrdolone deca front view vials.jpg",
+      image: "img/products/nanrdolone deca front view vials.jpg",
       images: [
-        "/img/products/nanrdolone deca front view vials.jpg",
-        "/img/products/nandrolone deca back side view.jpg"
+        "img/products/nanrdolone deca front view vials.jpg",
+        "img/products/nandrolone deca back side view.jpg"
       ] 
     },
     { 
