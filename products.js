@@ -48,7 +48,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
-      availability: "coming soon",
+      availability: "avalable"
       image: "/img/products/test c front view vials 2.jpg",
       images: [
         "/img/products/test c front view vials 2.jpg",
@@ -104,7 +104,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
-      availability: "coming soon",
+      availability: "available",
       image: "/img/products/nandrolone front side view.jpg",
       images: [
         "/img/products/nandrolone front side view.jpg",
@@ -248,11 +248,11 @@ let products = [
     },
     { 
       id: 36, 
-      name: "Masteron Drostanolone 100mg", 
+      name: "Masteron propionate 100mg", 
       price: "39,95", 
       category: "injections", 
       brand: "Genetic Life Science", 
-      availability: "Coming Soon",
+      availability: "available",
       image: "/img/products/i9vt5cv6kf-1668531489.jpg",
       images: [
         "/img/products/i9vt5cv6kf-1668531489.jpg"
