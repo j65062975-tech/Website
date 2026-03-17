@@ -77,10 +77,10 @@ let products = [
       category: "injections", 
       brand: "Zycare", 
       availability: "available",
-      image: "../img/products/Boldenone front view.jpeg",
+      image: "./img/products/Boldenone front view.jpeg",
       images: [
-        "../img/products/Boldenone front view.jpeg",
-        "../img/products/Boldenone front view 3.jpeg"
+        "./img/products/Boldenone front view.jpeg",
+        "./img/products/Boldenone front view 3.jpeg"
       ] 
     },
     { 
