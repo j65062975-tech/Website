@@ -80,7 +80,9 @@ let products = [
       image: "/img/products/boldenon-250mg.jpg",
       images: [
         "/img/products/boldenon-250mg.jpg",
-        "/img/products/boldenon-250mg-2.jpg"
+        "/img/products/boldenon-250mg-2.jpg",
+        "/img/products/boldenon-250mg-3.jpg",
+        "/img/products/boldenon-250mg-4.jpg"
       ] 
     },
     { 
@@ -171,7 +173,9 @@ let products = [
       availability: "available",
       image: "/img/products/proviron.jpg",
       images: [
-        "/img/products/proviron.jpg"
+        "/img/products/proviron.jpg",
+        "/img/products/proviron-2.jpg",
+        "/img/products/proviron-3.jpg"
       ] 
     },
 

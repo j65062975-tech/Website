@@ -155,8 +155,8 @@ For questions, contact us at websitepowergenx@proton.me
 
 ---
 
-*{product['cta']}*
-""".format(product=product)
+*{}
+""".format(product['cta'])
     
     return post_title, post_content
 
