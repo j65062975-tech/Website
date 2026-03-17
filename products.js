@@ -252,7 +252,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Genetic Life Science", 
-      availability: "coming soon",
+      availability: "Coming Soon",
       image: "/img/products/i9vt5cv6kf-1668531489.jpg",
       images: [
         "/img/products/i9vt5cv6kf-1668531489.jpg"
