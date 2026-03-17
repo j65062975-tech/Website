@@ -175,7 +175,8 @@ let products = [
       images: [
         "/img/products/proviron.jpg",
         "/img/products/proviron-2.jpg",
-        "/img/products/proviron-3.jpg"
+        "/img/products/proviron-3.jpg",
+        "/img/products/provicare front side view.jpg"
       ] 
     },
 
