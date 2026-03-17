@@ -77,11 +77,10 @@ let products = [
       category: "injections", 
       brand: "Zycare", 
       availability: "available",
-      image: "./img/products/primobolon front side view.jpg",
+      image: "./img/products/Boldenone front view.jpeg",
       images: [
-        "./img/products/primobolon front side view.jpg",
-        "./img/products/primobolon front side view  2.jpg",
-        "./img/products/primobolon vials.jpg"
+        "./img/products/Boldenone front view.jpeg",
+        "./img/products/Boldenone front view 3.jpeg"
       ] 
     },
     { 
