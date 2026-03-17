@@ -126,18 +126,6 @@ let products = [
       ] 
     },
     { 
-      id: 13, 
-      name: "Evolve biolabs Tbol 25mg", 
-      price: "35,00", 
-      category: "tablets", 
-      brand: "Evolve", 
-      availability: "available",
-      image: "/img/products/Turinabol.jpeg",
-      images: [
-        "/img/products/Turinabol.jpeg"
-      ] 
-    },
-    { 
       id: 14, 
       name: "Anadrol 50mg",
       price: "39,50", 
@@ -228,7 +216,7 @@ let products = [
       price: "44,95", 
       category: "tablets", 
       brand: "Genetic Life Science", 
-      availability: "available",
+      availability: "coming soon",
       image: "/img/products/dxvqunmlnr-1668635636.jpg",
       images: [
         "/img/products/dxvqunmlnr-1668635636.jpg"
@@ -240,7 +228,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Genetic Life Science", 
-      availability: "available",
+      availability: "coming soon",
       image: "/img/products/m4a9hyem95-1668548005.jpg",
       images: [
         "/img/products/m4a9hyem95-1668548005.jpg"
@@ -252,7 +240,7 @@ let products = [
       price: "35,00", 
       category: "tablets", 
       brand: "Genetic Life Science", 
-      availability: "available",
+      availability: "coming soon",
       image: "/img/products/snyejvzz4o-1668708435.jpg",
       images: [
         "/img/products/snyejvzz4o-1668708435.jpg"
@@ -264,7 +252,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Genetic Life Science", 
-      availability: "available",
+      availability: "coming soon",
       image: "/img/products/i9vt5cv6kf-1668531489.jpg",
       images: [
         "/img/products/i9vt5cv6kf-1668531489.jpg"
