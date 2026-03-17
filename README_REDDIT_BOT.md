@@ -4,8 +4,22 @@ Deze map bevat een lokale Python-versie van de Reddit bot die je op je eigen com
 
 ## Bestanden
 
-- `reddit_bot.py` - De hoofdapplicatie
+- `reddit_bot.py` - De hoofdapplicatie met de producten die beschikbaar zijn op de website
+- `generate_sample_posts.py` - Script om voorbeeldadvertenties te genereren
+- `sample_advertisement_post.md` - Voorbeeld van een advertentiepost
 - `requirements.txt` - Vereiste Python packages (alleen voor echte Reddit API versie)
+
+## Producten
+
+De bot plaatst advertenties voor de volgende producten:
+- Testosteron Enanthate 250mg
+- Testosteron Propionate 100mg
+- Deca NPP 100mg
+- Boldenon 250mg
+- Trenbolone Enanthate 100mg
+- Anadrol 50mg
+- Winstrol 10mg
+- Proviron 25mg
 
 ## Gebruik
 
@@ -14,6 +28,11 @@ Deze map bevat een lokale Python-versie van de Reddit bot die je op je eigen com
 3. Run de bot met:
    ```
    python reddit_bot.py
+   ```
+
+4. Of genereer voorbeeldposts met:
+   ```
+   python generate_sample_posts.py
    ```
 
 ## Commando's
