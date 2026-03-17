@@ -248,11 +248,11 @@ let products = [
     },
     { 
       id: 36, 
-      name: "Masteron Drostanolone 100mg", 
+      name: "Masteron propionate 100mg", 
       price: "39,95", 
       category: "injections", 
       brand: "Genetic Life Science", 
-      availability: "Coming Soon",
+      availability: "available",
       image: "/img/products/i9vt5cv6kf-1668531489.jpg",
       images: [
         "/img/products/i9vt5cv6kf-1668531489.jpg"
