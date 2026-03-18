@@ -48,7 +48,7 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
-      availability: "avalable"
+      availability: "available",
       image: "/img/products/test c front view vials 2.jpg",
       images: [
         "/img/products/test c front view vials 2.jpg",
@@ -147,7 +147,7 @@ let products = [
       availability: "available",
       image: "provicare front side view.jpg"
       images: [
-        "Provion back side 25 mg.jpg",
+        "/img/products/provion back side 25 mg.jpg",
         "/img/products/iron-2.jpg",
         "/img/products/proviron-3.jpg",
         "/img/products/provicare front side view.jpg"
