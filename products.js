@@ -145,7 +145,7 @@ let products = [
       category: "tablets", 
       brand: "Zycare", 
       availability: "available",
-      image: "provicare front side view.jpg"
+      image: "/img/products/provicare front side view.jpg",
       images: [
         "/img/products/provion back side 25 mg.jpg",
         "/img/products/iron-2.jpg",
