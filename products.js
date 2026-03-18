@@ -48,7 +48,11 @@ let products = [
       price: "39,95", 
       category: "injections", 
       brand: "Zycare", 
+<<<<<<< HEAD
       availability: "available",
+=======
+      availability: "avalable"
+>>>>>>> main
       image: "/img/products/test c front view vials 2.jpg",
       images: [
         "/img/products/test c front view vials 2.jpg",
