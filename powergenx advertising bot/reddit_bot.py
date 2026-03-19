@@ -31,49 +31,49 @@ class RedditBot:
                 "name": "Testosteron Enanthate 250mg",
                 "description": "Premium quality testosterone enanthate for muscle growth and strength enhancement",
                 "price": "€39.95",
-                "url": "https://yourwebsite.com/product-detail.html?id=test-enanthate"
+                "url": "https://powergenx.nl/product-detail.html?id=test-enanthate"
             },
             {
                 "name": "Testosteron Propionate 100mg",
                 "description": "Fast-acting testosterone propionate for rapid muscle gains and improved recovery",
                 "price": "€39.95",
-                "url": "https://yourwebsite.com/product-detail.html?id=test-propionate"
+                "url": "https://powergenx.nl/product-detail.html?id=test-propionate"
             },
             {
                 "name": "Deca NPP 100mg",
                 "description": "Nandrolone phenylpropionate for joint health and significant muscle mass gains",
                 "price": "€39.95",
-                "url": "https://yourwebsite.com/product-detail.html?id=deca-npp"
+                "url": "https://powergenx.nl/product-detail.html?id=deca-npp"
             },
             {
                 "name": "Boldenon 250mg",
                 "description": "Equipoise for increased nitrogen retention and enhanced endurance",
                 "price": "€43.95",
-                "url": "https://yourwebsite.com/product-detail.html?id=boldenon"
+                "url": "https://powergenx.nl/product-detail.html?id=boldenon"
             },
             {
                 "name": "Trenbolone Enanthate 100mg",
                 "description": "Powerful anabolic compound for extreme muscle hardness and fat loss",
                 "price": "€39.95",
-                "url": "https://yourwebsite.com/product-detail.html?id=tren-enanthate"
+                "url": "https://powergenx.nl/product-detail.html?id=tren-enanthate"
             },
             {
                 "name": "Anadrol 50mg",
                 "description": "Oxymetholone for rapid strength increases and red blood cell production",
                 "price": "€39.50",
-                "url": "https://yourwebsite.com/product-detail.html?id=anadrol"
+                "url": "https://poweergenx.nl/product-detail.html?id=anadrol"
             },
             {
                 "name": "Winstrol 10mg",
                 "description": "Stanozolol for cutting cycles and enhanced muscle definition",
                 "price": "€30.00",
-                "url": "https://yourwebsite.com/product-detail.html?id=winstrol"
+                "url": "https://powergenx.nl/product-detail.html?id=winstrol"
             },
             {
                 "name": "Proviron 25mg",
                 "description": "Mesterolone for increased free testosterone levels and improved libido",
                 "price": "€45.00",
-                "url": "https://yourwebsite.com/product-detail.html?id=proviron"
+                "url": "https://powergenx.nl/product-detail.html?id=proviron"
             }
         ]
         
@@ -226,7 +226,7 @@ def main():
     print("PowergenX Reddit Bot")
     print("====================")
     print("Commands:")
-    print("  start - Start the bot")
+    print("  start - Start sthe bot")
     print("  stop - Stop the bot")
     print("  post - Make a manual post")
     print("  status - Show bot status")
