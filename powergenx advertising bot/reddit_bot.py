@@ -3,7 +3,7 @@
 Reddit Bot for PowergenX Supplements
 This bot can post advertisements to Reddit forums and interact with users
 """
-
+import praw
 import time
 import random
 import logging
@@ -19,7 +19,7 @@ class RedditBot:
     def __init__(self):
         """Initialize the Reddit bot with configuration"""
         # Bot configuration
-        self.subreddits = ['supplements', 'health', 'fitness', 'nutrition']
+        self.subreddits = ['supplemen']
         self.posting_interval = 3600  # 1 hour in seconds
         self.last_post_time = 0
         self.is_running = False
