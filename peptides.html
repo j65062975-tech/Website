@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peptiden - Premium Producten</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-weight: bold;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+            color: #2575fc;
+        }
+        
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #6a11cb;
+            margin: 10px 0;
+        }
+        
+        .product-description {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(37, 117, 252, 0.4);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            color: #2575fc;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Premium Peptiden</h1>
+            <p class="subtitle">Geavanceerde peptiden voor optimale gezondheid en prestaties</p>
+        </header>
+        
+        <h2 class="section-title">Onze Peptiden Collectie</h2>
+        
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    RETATIUDÉ 10MG
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">RETATIUDÉ 10MG</h3>
+                    <p class="product-description">Een krachtige combinatie van peptiden voor huidvernieuwing en anti-veroudering.</p>
+                    <div class="product-price">€XX,XX</div>
+                    <button class="btn">Toevoegen aan winkelwagen</button>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    GHK-CU 100MG
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">GHK-CU 100MG</h3>
+                    <p class="product-description">Koper peptide bekend om zijn huidherstellende en anti-inflammatoire eigenschappen.</p>
+                    <div class="product-price">€XX,XX</div>
+                    <button class="btn">Toevoegen aan winkelwagen</button>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    BPC-157/TB500 MIX 10MG
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">BPC-157/TB500 MIX 10MG</h3>
+                    <p class="product-description">Synergistische mix voor gewrichts- en spierherstel.</p>
+                    <div class="product-price">€XX,XX</div>
+                    <button class="btn">Toevoegen aan winkelwagen</button>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    MELANOTAN II 10MG
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">MELANOTAN II 10MG</h3>
+                    <p class="product-description">Populaire tanning peptide voor natuurlijke huidpigmentatie.</p>
+                    <div class="product-price">€XX,XX</div>
+                    <button class="btn">Toevoegen aan winkelwagen</button>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    HGH 100IU
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">HGH 100IU</h3>
+                    <p class="product-description">Humane groeihormoon voor herstel en anti-veroudering.</p>
+                    <div class="product-price">€XX,XX</div>
+                    <button class="btn">Toevoegen aan winkelwagen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2026 Zycare Peptiden | Premium kwaliteit peptiden</p>
+    </footer>
+</body>
+</html>
