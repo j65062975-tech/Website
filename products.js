@@ -84,7 +84,7 @@ let products = [
   },
   {
     id: 8,
-    name: "Trenbolon Enanthate 100mg",
+    name: "Trenbolon Enanthate 250mg",
     price: "39,95",
     category: "injections",
     brand: "Zycare",
@@ -215,7 +215,7 @@ let products = [
     price: "44,95",
     category: "tablets",
     brand: "Genetic Life Science",
-    availability: "coming soon",
+    availability: "available",
     image: "/img/products/dxvqunmlnr-1668635636.jpg",
     images: [
       "/img/products/dxvqunmlnr-1668635636.jpg"
@@ -227,7 +227,7 @@ let products = [
     price: "39,95",
     category: "injections",
     brand: "Genetic Life Science",
-    availability: "coming soon",
+    availability: "available",
     image: "/img/products/m4a9hyem95-1668548005.jpg",
     images: [
       "/img/products/m4a9hyem95-1668548005.jpg"
@@ -235,11 +235,11 @@ let products = [
   },
   {
     id: 35,
-    name: "Turinabol 25mg",
+    name: "Turinabol 10mg",
     price: "35,00",
     category: "tablets",
     brand: "Genetic Life Science",
-    availability: "coming soon",
+    availability: "available",
     image: "/img/products/snyejvzz4o-1668708435.jpg",
     images: [
       "/img/products/snyejvzz4o-1668708435.jpg"
